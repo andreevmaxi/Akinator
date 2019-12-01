@@ -1,0 +1,41 @@
+digraph G{
+node [ fontname="Lobster", fontsize=25];
+rankdir=HR;
+subgraph clusterlist {
+style=filled;
+color=lightgrey;
+5771432 [shape=record, label="{Number of tree nodes: | 17} | {NodePointer:  | 5810a8} | {ParentPointer: | 0} | {data: | 1} | {Left: | Right:} | {5810c8 | 5811d8}",style="filled",fillcolor="orange"];
+5771432->5771464[dir="both";style="bold"];
+5771432->5771736[dir="both";style="bold"];
+5771736 [shape=record, label="{NodePointer:  | 5811d8} | {ParentPointer: | 5810a8} | {data: | 3} | {Left: | Right:} | {5811f8 | 490ff0}",style="filled",fillcolor="tomato3"];
+5771736->5771768[dir="both";style="bold"];
+5771736->4788208[dir="both";style="bold"];
+4788208 [shape=record, label="{NodePointer:  | 490ff0} | {ParentPointer: | 5811d8} | {data: | 5} | {Left: | Right:} | {491010 | 491030}",style="filled",fillcolor="tomato3"];
+4788208->4788240[dir="both";style="bold"];
+4788208->4788272[dir="both";style="bold"];
+4788272 [shape=record, label="{NodePointer:  | 491030} | {ParentPointer: | 490ff0} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+4788240 [shape=record, label="{NodePointer:  | 491010} | {ParentPointer: | 490ff0} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+5771768 [shape=record, label="{NodePointer:  | 5811f8} | {ParentPointer: | 5811d8} | {data: | 4} | {Left: | Right:} | {581218 | 581238}",style="filled",fillcolor="springgreen3"];
+5771768->5771800[dir="both";style="bold"];
+5771768->5771832[dir="both";style="bold"];
+5771832 [shape=record, label="{NodePointer:  | 581238} | {ParentPointer: | 5811f8} | {data: | 8} | {Left: | Right:} | {581258 | 581278}",style="filled",fillcolor="tomato3"];
+5771832->5771864[dir="both";style="bold"];
+5771832->5771896[dir="both";style="bold"];
+5771896 [shape=record, label="{NodePointer:  | 581278} | {ParentPointer: | 581238} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+5771864 [shape=record, label="{NodePointer:  | 581258} | {ParentPointer: | 581238} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+5771800 [shape=record, label="{NodePointer:  | 581218} | {ParentPointer: | 5811f8} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+5771464 [shape=record, label="{NodePointer:  | 5810c8} | {ParentPointer: | 5810a8} | {data: | 2} | {Left: | Right:} | {5810f8 | 581178}",style="filled",fillcolor="springgreen3"];
+5771464->5771512[dir="both";style="bold"];
+5771464->5771640[dir="both";style="bold"];
+5771640 [shape=record, label="{NodePointer:  | 581178} | {ParentPointer: | 5810c8} | {data: | 7} | {Left: | Right:} | {581198 | 5811b8}",style="filled",fillcolor="tomato3"];
+5771640->5771672[dir="both";style="bold"];
+5771640->5771704[dir="both";style="bold"];
+5771704 [shape=record, label="{NodePointer:  | 5811b8} | {ParentPointer: | 581178} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+5771672 [shape=record, label="{NodePointer:  | 581198} | {ParentPointer: | 581178} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+5771512 [shape=record, label="{NodePointer:  | 5810f8} | {ParentPointer: | 5810c8} | {data: | 6} | {Left: | Right:} | {581128 | 581158}",style="filled",fillcolor="springgreen3"];
+5771512->5771560[dir="both";style="bold"];
+5771512->5771608[dir="both";style="bold"];
+5771608 [shape=record, label="{NodePointer:  | 581158} | {ParentPointer: | 5810f8} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+5771560 [shape=record, label="{NodePointer:  | 581128} | {ParentPointer: | 5810f8} | {data: | } | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+label = "Tree with name: TestTreee"}
+}

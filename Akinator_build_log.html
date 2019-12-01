@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>Akinator build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>02-12-2019 at 02:43.45</u><br />
+Build ended on: <u>02-12-2019 at 02:43.55</u><p />
+<b>-------------- Build: Debug in Akinator (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+mingw32-g++.exe "C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h" -o bin\Debug\Akinator.exe -mconsole  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_EJUDGE_CLIENT_SIDE -D_EJC -D__slowpoke -D_VORONEZH -D_DEBUG<br />
+In file included from C:\Users\Maksim\Documents\GitHub\Akinator\RecursiveEnter.h:3:0,<br />
+                 from C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:12:<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:3:8: warning: 'struct MNode_Binar_t' has pointer data members [-Weffc++]</font><br />
+ struct MNode_Binar_t<br />
+        ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:3:8: warning:   but does not override 'MNode_Binar_t(const MNode_Binar_t&amp;)' [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:3:8: warning:   or 'operator=(const MNode_Binar_t&amp;)' [-Weffc++]</font><br />
+C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h: In constructor 'MNode_Binar_t::MNode_Binar_t(char, MNode_Binar_t*)':<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:16:1: warning: 'MNode_Binar_t::type' should be initialized in the member initialization list [-Weffc++]</font><br />
+ MNode_Binar_t::MNode_Binar_t(char T, MNode_Binar_t* Parnt)<br />
+ ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:16:1: warning: 'MNode_Binar_t::Parent' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:16:1: warning: 'MNode_Binar_t::data' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:16:1: warning: 'MNode_Binar_t::Left' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:16:1: warning: 'MNode_Binar_t::Right' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\maks_node.h:21:11: warning: switch missing default case [-Wswitch-default]</font><br />
+     switch(type)<br />
+           ^<br />
+In file included from C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:12:0:<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\RecursiveEnter.h: In function 'int MBT_r::NewLevel(MNode_Binar_t*, char**, char)':<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\RecursiveEnter.h:53:11: warning: switch missing default case [-Wswitch-default]</font><br />
+     switch(**buffer)<br />
+           ^<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\RecursiveEnter.h: At global scope:<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\RecursiveEnter.h:49:5: warning: unused parameter 'NowPath' [-Wunused-parameter]</font><br />
+ int MBT_r::NewLevel(MNode_Binar_t* NowNode, char** buffer, char NowPath)<br />
+     ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\RecursiveEnter.h:79:6: warning: unused parameter 'NowNode' [-Wunused-parameter]</font><br />
+ bool MBT_r::BackLevel(MNode_Binar_t* NowNode, char** buffer)<br />
+      ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:26:8: warning: 'struct MBinaryTree_t' has pointer data members [-Weffc++]</font><br />
+ struct MBinaryTree_t<br />
+        ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:26:8: warning:   but does not override 'MBinaryTree_t(const MBinaryTree_t&amp;)' [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:26:8: warning:   or 'operator=(const MBinaryTree_t&amp;)' [-Weffc++]</font><br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h: In constructor 'MBinaryTree_t::MBinaryTree_t(std::string)':<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:56:1: warning: 'MBinaryTree_t::NumOfDumps' should be initialized in the member initialization list [-Weffc++]</font><br />
+ MBinaryTree_t::MBinaryTree_t( std::string Name )<br />
+ ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:56:1: warning: 'MBinaryTree_t::TreeSize' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:56:1: warning: 'MBinaryTree_t::TreeName' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:56:1: warning: 'MBinaryTree_t::root' should be initialized in the member initialization list [-Weffc++]</font><br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h: In member function 'int MBinaryTree_t::PrintTree(char*, int*, MNode_Binar_t*)':<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:109:36: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+     printf("NowNode: %x\n", NowNode);<br />
+                                    ^<br />
+<font color="#ff0000">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:154:69: error: no matching function for call to 'MBinaryTree_t::PrintTree(char*&amp;, MNode_Binar_t*&amp;)'</font><br />
+             BShift += MBinaryTree_t::PrintTree(buffer, NowNode-&gt;Left);<br />
+                                                                     ^<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:154:69: note: candidate is:<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:95:5: note: int MBinaryTree_t::PrintTree(char*, int*, MNode_Binar_t*)<br />
+ int MBinaryTree_t::PrintTree(char* buffer, int* BuffSize, MNode_Binar_t* NowNode)<br />
+     ^<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:95:5: note:   no known conversion for argument 2 from 'MNode_Binar_t*' to 'int*'<br />
+<font color="#ff0000">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:165:70: error: no matching function for call to 'MBinaryTree_t::PrintTree(char*&amp;, MNode_Binar_t*&amp;)'</font><br />
+             BShift += MBinaryTree_t::PrintTree(buffer, NowNode-&gt;Right);<br />
+                                                                      ^<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:165:70: note: candidate is:<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:95:5: note: int MBinaryTree_t::PrintTree(char*, int*, MNode_Binar_t*)<br />
+ int MBinaryTree_t::PrintTree(char* buffer, int* BuffSize, MNode_Binar_t* NowNode)<br />
+     ^<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:95:5: note:   no known conversion for argument 2 from 'MNode_Binar_t*' to 'int*'<br />
+<font color="#ff0000">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:179:27: error: lvalue required as left operand of assignment</font><br />
+         (buffer - BShift) = (char*) realloc((buffer - BShift), BShift * sizeof(char));<br />
+                           ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:107:10: warning: unused variable 'IsPrintOk' [-Wunused-variable]</font><br />
+     bool IsPrintOk = 1;<br />
+          ^<br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h: In member function 'void MBinaryTree_t::TDUMP(int)':<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:306:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+         while(tmp != std::string::npos)<br />
+                                   ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:313:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+         while(tmp != std::string::npos)<br />
+                                   ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:337:314: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+         fprintf(LDot, "%d [shape=record, label=\"{Number of tree nodes: | %d} | {NodePointer:  | %x} | {ParentPointer: | %x} | {data: | %s} | {Left: | Right:} | {%x | %x}\",style=\"filled\",fillcolor=\"orange\"];\n", NowNode, TreeSize, NowNode, NowNode-&gt;Parent, (char*)NowNode-&gt;data, NowNode-&gt;Left, NowNode-&gt;Right);<br />
+                                                                                                                                                                                                                                                                                                                          ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:337:314: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:337:314: warning: format '%x' expects argument of type 'unsigned int', but argument 6 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:337:314: warning: format '%x' expects argument of type 'unsigned int', but argument 8 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:337:314: warning: format '%x' expects argument of type 'unsigned int', but argument 9 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:345:95: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+                 fprintf(LDot, "%d-&gt;%d[dir=\"both\";style=\"bold\"];\n", NowNode, NowNode-&gt;Left);<br />
+                                                                                               ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:345:95: warning: format '%d' expects argument of type 'int', but argument 4 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:350:96: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+                 fprintf(LDot, "%d-&gt;%d[dir=\"both\";style=\"bold\"];\n", NowNode, NowNode-&gt;Right);<br />
+                                                                                                ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:350:96: warning: format '%d' expects argument of type 'int', but argument 4 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:362:288: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+                     fprintf(LDot, "%d [shape=record, label=\"{NodePointer:  | %x} | {ParentPointer: | %x} | {data: | %s} | {Left: | Right:} | {%x | %x}\",style=\"filled\",fillcolor=\"seagreen2\"];\n", NowNode, NowNode, NowNode-&gt;Parent, (char*)NowNode-&gt;data, NowNode-&gt;Left, NowNode-&gt;Right);<br />
+                                                                                                                                                                                                                                                                                                ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:362:288: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:362:288: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:362:288: warning: format '%x' expects argument of type 'unsigned int', but argument 7 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:362:288: warning: format '%x' expects argument of type 'unsigned int', but argument 8 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:365:286: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+                     fprintf(LDot, "%d [shape=record, label=\"{NodePointer:  | %x} | {ParentPointer: | %x} | {data: | %s} | {Left: | Right:} | {%x | %x}\",style=\"filled\",fillcolor=\"salmon2\"];\n", NowNode, NowNode, NowNode-&gt;Parent, (char*)NowNode-&gt;data, NowNode-&gt;Left, NowNode-&gt;Right);<br />
+                                                                                                                                                                                                                                                                                              ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:365:286: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:365:286: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:365:286: warning: format '%x' expects argument of type 'unsigned int', but argument 7 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:365:286: warning: format '%x' expects argument of type 'unsigned int', but argument 8 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:371:291: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+                     fprintf(LDot, "%d [shape=record, label=\"{NodePointer:  | %x} | {ParentPointer: | %x} | {data: | %s} | {Left: | Right:} | {%x | %x}\",style=\"filled\",fillcolor=\"springgreen3\"];\n", NowNode, NowNode, NowNode-&gt;Parent, (char*)NowNode-&gt;data, NowNode-&gt;Left, NowNode-&gt;Right);<br />
+                                                                                                                                                                                                                                                                                                   ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:371:291: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:371:291: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:371:291: warning: format '%x' expects argument of type 'unsigned int', but argument 7 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:371:291: warning: format '%x' expects argument of type 'unsigned int', but argument 8 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:374:286: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+                     fprintf(LDot, "%d [shape=record, label=\"{NodePointer:  | %x} | {ParentPointer: | %x} | {data: | %s} | {Left: | Right:} | {%x | %x}\",style=\"filled\",fillcolor=\"tomato3\"];\n", NowNode, NowNode, NowNode-&gt;Parent, (char*)NowNode-&gt;data, NowNode-&gt;Left, NowNode-&gt;Right);<br />
+                                                                                                                                                                                                                                                                                              ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:374:286: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:374:286: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:374:286: warning: format '%x' expects argument of type 'unsigned int', but argument 7 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:374:286: warning: format '%x' expects argument of type 'unsigned int', but argument 8 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:380:99: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+                     fprintf(LDot, "%d-&gt;%d[dir=\"both\";style=\"bold\"];\n", NowNode, NowNode-&gt;Left);<br />
+                                                                                                   ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:380:99: warning: format '%d' expects argument of type 'int', but argument 4 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:385:100: warning: format '%d' expects argument of type 'int', but argument 3 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+                     fprintf(LDot, "%d-&gt;%d[dir=\"both\";style=\"bold\"];\n", NowNode, NowNode-&gt;Right);<br />
+                                                                                                    ^<br />
+<font color="#0000ff">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:385:100: warning: format '%d' expects argument of type 'int', but argument 4 has type 'MNode_Binar_t*' [-Wformat=]</font><br />
+C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h: In member function 'void MBinaryTree_t::BuffCheck(char*, int*)':<br />
+<font color="#ff0000">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:410:20: error: 'BShift' was not declared in this scope</font><br />
+     if(BuffSize &lt;= BShift)<br />
+                    ^<br />
+<font color="#ff0000">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:412:18: error: invalid operands of types 'int*' and 'int' to binary 'operator*'</font><br />
+         BuffSize *= 2;<br />
+                  ^<br />
+<font color="#ff0000">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:412:18: error:   in evaluation of 'operator*=(int*, int)'</font><br />
+<font color="#ff0000">C:\Users\Maksim\Documents\GitHub\Akinator\MTree.h:413:49: error: invalid operands of types 'unsigned int' and 'int*' to binary 'operator*'</font><br />
+         buffer = realloc(buffer, sizeof(char) * BuffSize);<br />
+                                                 ^<br />
+<font color="#a00000">Process terminated with status 1 (0 minutes, 9 seconds)</font><br />
+<font color="#a00000">7 errors, 56 warnings (0 minutes, 9 seconds)</font><br />
+</tt>
+</body>
+</html>
