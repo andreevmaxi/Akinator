@@ -50,6 +50,7 @@ int MBT_r::NewLevel(MNode_Binar_t* NowNode, char** buffer, char NowPath)
     {
     int TreeSize = 1;
 
+    SpaceEater(buffer);
     switch(**buffer)
         {
         case('{'):
@@ -58,18 +59,40 @@ int MBT_r::NewLevel(MNode_Binar_t* NowNode, char** buffer, char NowPath)
             SpaceEater(buffer);
             if(Quotes(NowNode, buffer))
                 {
+                int TmpSize = TreeSize;
                 MBT_r::PlusNode(NowNode, 0);
                 TreeSize += NewLevel((MNode_Binar_t*)NowNode->Left, buffer, 'l');
+                if(TmpSize == TreeSize)
+                    {
+                    delete NowNode->Left;
+                    NowNode->Left = 0;
+                    }
+
+                TmpSize = TreeSize;
                 MBT_r::PlusNode(NowNode, 1);
                 TreeSize += NewLevel((MNode_Binar_t*)NowNode->Right, buffer, 'r');
+                if(TmpSize == TreeSize)
+                    {
+                    delete NowNode->Right;
+                    NowNode->Right = 0;
+                    }
                 }
             BackLevel(NowNode, buffer);
             }
             break;
+
         case('$'):
             {
             ++(*buffer);
             SpaceEater(buffer);
+            --TreeSize;
+            }
+            break;
+
+        default:
+            {
+            SpaceEater(buffer);
+            --TreeSize;
             }
             break;
         }

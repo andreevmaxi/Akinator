@@ -1,0 +1,23 @@
+digraph G{
+node [ fontname="Lobster", fontsize=25];
+rankdir=HR;
+subgraph clusterlist {
+style=filled;
+color=lightgrey;
+7278760 [shape=record, label="{Number of tree nodes: | 8} | {NodePointer:  | 6f10a8} | {ParentPointer: | 0} | {data: | 1} | {Left: | Right:} | {6f10c8 | 6f1148}",style="filled",fillcolor="orange"];
+7278760->7278792[dir="both";style="bold"];
+7278760->7278920[dir="both";style="bold"];
+7278920 [shape=record, label="{NodePointer:  | 6f1148} | {ParentPointer: | 6f10a8} | {data: | 3} | {Left: | Right:} | {6f1168 | 6f11a8}",style="filled",fillcolor="tomato3"];
+7278920->7278952[dir="both";style="bold"];
+7278920->7279016[dir="both";style="bold"];
+7279016 [shape=record, label="{NodePointer:  | 6f11a8} | {ParentPointer: | 6f1148} | {data: | 5} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+7278952 [shape=record, label="{NodePointer:  | 6f1168} | {ParentPointer: | 6f1148} | {data: | 4} | {Left: | Right:} | {0 | 6f1188}",style="filled",fillcolor="springgreen3"];
+7278952->7278984[dir="both";style="bold"];
+7278984 [shape=record, label="{NodePointer:  | 6f1188} | {ParentPointer: | 6f1168} | {data: | 8} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+7278792 [shape=record, label="{NodePointer:  | 6f10c8} | {ParentPointer: | 6f10a8} | {data: | 2} | {Left: | Right:} | {6f10f8 | 6f1128}",style="filled",fillcolor="springgreen3"];
+7278792->7278840[dir="both";style="bold"];
+7278792->7278888[dir="both";style="bold"];
+7278888 [shape=record, label="{NodePointer:  | 6f1128} | {ParentPointer: | 6f10c8} | {data: | 7} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+7278840 [shape=record, label="{NodePointer:  | 6f10f8} | {ParentPointer: | 6f10c8} | {data: | 6} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+label = "Tree with name: TestTreee"}
+}

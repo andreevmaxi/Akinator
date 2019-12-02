@@ -45,9 +45,9 @@ struct MBinaryTree_t
 
     DEB(void TDUMP(int err));
 
-    int PrintTree(char* buffer, int* BuffSize, MNode_Binar_t* NowNode = (MNode_Binar_t*)3, int BShift = 0);
+    int PrintTree(char** buffer, int* BuffSize, MNode_Binar_t* NowNode = (MNode_Binar_t*)3, int BShift = 0);
 
-    void BuffCheck(char* buffer, int* BuffSize);
+    void BuffCheck(char** buffer, int* BuffSize, int BShift);
 
     ~MBinaryTree_t();
     };
@@ -92,11 +92,11 @@ bool MBinaryTree_t::ReadTree(char* buffer)
     return 1;
     }
 
-int MBinaryTree_t::PrintTree(char* buffer, int* BuffSize, MNode_Binar_t* NowNode, int BShift)
+int MBinaryTree_t::PrintTree(char** buffer, int* BuffSize, MNode_Binar_t* NowNode, int BShift)
     {
-    if(buffer == 0)
+    if(*buffer == 0)
         {
-        buffer = (char*) calloc(1, sizeof(char));
+        *buffer = (char*) calloc(1, sizeof(char));
         *BuffSize = 1;
         }
     if(NowNode == (MNode_Binar_t*)3)
@@ -105,77 +105,75 @@ int MBinaryTree_t::PrintTree(char* buffer, int* BuffSize, MNode_Binar_t* NowNode
         }
     bool IsPrintOk = 1;
 
-    printf("NowNode: %x\n", NowNode);
-
-    BuffCheck((buffer - BShift), BuffSize);
-    *buffer = '{';
-    ++buffer;
+    BuffCheck(buffer, BuffSize, BShift);
+    *(*buffer + BShift) = '{';
     ++BShift;
-    BuffCheck((buffer - BShift), BuffSize);
-    *buffer = '\"';
-    ++buffer;
+    BuffCheck(buffer, BuffSize, BShift);
+    *(*buffer + BShift) = ' ';
+    ++BShift;
+    BuffCheck(buffer, BuffSize, BShift);
+    *(*buffer + BShift) = '\"';
     ++BShift;
     char* NowByteOfData = (char*)NowNode->data;
     while(*NowByteOfData != '\0')
         {
-        BuffCheck((buffer - BShift), BuffSize);
-        *buffer = *NowByteOfData;
-        ++buffer;
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = *NowByteOfData;
         ++BShift;
         ++NowByteOfData;
         }
-    BuffCheck((buffer - BShift), BuffSize);
-    *buffer = (char)'\"';
-    ++buffer;
+    BuffCheck(buffer, BuffSize, BShift);
+    *(*buffer + BShift) = (char)'\"';
     ++BShift;
 
     if(NowNode->Left == (MNode_Binar_t*)0 && NowNode->Right == (MNode_Binar_t*)0)
         {
-        BuffCheck((buffer - BShift), BuffSize);
-        *buffer = '}';
-        ++buffer;
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = ' ';
+        ++BShift;
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = '}';
         ++BShift;
         return BShift;
         } else
         {
-        BuffCheck((buffer - BShift), BuffSize);
-        *buffer = ' ';
-        ++buffer;
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = ' ';
         ++BShift;
         if(NowNode->Left == (MNode_Binar_t*)0)
             {
-            BuffCheck((buffer - BShift), BuffSize);
-            *buffer = '$';
-            ++buffer;
+            BuffCheck(buffer, BuffSize, BShift);
+            *(*buffer + BShift) = '$';
+            ++BShift;
             } else
             {
-            int tmp = BShift;
-            BShift += MBinaryTree_t::PrintTree(buffer, NowNode->Left);
-            buffer += (BShift - tmp);
+            BShift = MBinaryTree_t::PrintTree(buffer, BuffSize, NowNode->Left, BShift);
             }
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = ' ';
+        ++BShift;
         if(NowNode->Right == (MNode_Binar_t*)0)
             {
-            BuffCheck((buffer - BShift), BuffSize);
-            *buffer = '$';
-            ++buffer;
+            BuffCheck(buffer, BuffSize, BShift);
+            *(*buffer + BShift) = '$';
+            ++BShift;
             } else
             {
-            int tmp = BShift;
-            BShift += MBinaryTree_t::PrintTree(buffer, NowNode->Right);
-            buffer += (BShift - tmp);
+            BShift = MBinaryTree_t::PrintTree(buffer, BuffSize, NowNode->Right, BShift);
             }
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = ' ';
+        ++BShift;
         }
-    BuffCheck((buffer - BShift), BuffSize);
-    *buffer = '}';
-    ++buffer;
+    BuffCheck(buffer, BuffSize, BShift);
+    *(*buffer + BShift) = '}';
     ++BShift;
     if(NowNode == root)
         {
-        BuffCheck((buffer - BShift), BuffSize);
-        *buffer = '\0';
-        ++buffer;
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = '\0';
         ++BShift;
-        (buffer - BShift) = (char*) realloc((buffer - BShift), BShift * sizeof(char));
+        *buffer = (char*) realloc(*buffer, BShift * sizeof(char));
         }
     return BShift;
     }
@@ -404,12 +402,12 @@ bool MBinaryTree_t::DeleteNode(MNode_Binar_t* DelNode, MNode_Binar_t** LeftSubTr
         }
 #endif
 
-void MBinaryTree_t::BuffCheck(char* buffer, int* BuffSize)
+void MBinaryTree_t::BuffCheck(char** buffer, int* BuffSize, int BShift)
     {
-    if(BuffSize <= BShift)
+    if(*BuffSize <= BShift)
         {
-        BuffSize *= 2;
-        buffer = realloc(buffer, sizeof(char) * BuffSize);
+        *BuffSize *= 2;
+        *buffer = (char*) realloc(*buffer, sizeof(char) * *BuffSize);
         }
     return;
     }
