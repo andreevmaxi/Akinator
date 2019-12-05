@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+struct kot
+    {
+    int SizeOfKot;
+
+    char* KotOpened;
+
+    char* KotClosed;
+
+    kot();
+
+    ~kot();
+
+    bool PrintKot();
+    };
+
+kot::kot()
+    {
+    FILE* fo = fopen("dzon_opened_ascii.txt", "r");
+    FILE* fc = fopen("dzon_closed_ascii.txt", "r");
+
+
+    fseek(fo, 0, SEEK_END);
+    SizeOfKot = ftell(fo);
+    rewind(fo);
+
+    KotOpened = (char*) calloc(SizeOfKot, sizeof(char));
+    fscanf(fo, "%s", KotOpened);
+
+    KotClosed = (char*) calloc(SizeOfKot, sizeof(char));
+    fscanf(fo, "%s", KotClosed);
+    return;
+    }
+    
+kot::~kot()
+    {
+    
+    }
+

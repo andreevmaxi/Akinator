@@ -32,9 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Akinator.cpp" />
 		<Unit filename="MTree.h" />
 		<Unit filename="RecursiveEnter.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="TestTree.cpp" />
+		<Unit filename="dzon.h" />
 		<Unit filename="maks_node.h" />
 		<Extensions>
 			<code_completion />
