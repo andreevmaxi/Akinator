@@ -1,0 +1,23 @@
+digraph G{
+node [ fontname="Lobster", fontsize=25];
+rankdir=HR;
+subgraph clusterlist {
+style=filled;
+color=lightgrey;
+1904224 [shape=record, label="{Number of tree nodes: | 8} | {NodePointer:  | 1d0e60} | {ParentPointer: | 0} | {data: | 1} | {Left: | Right:} | {1d0e80 | 1d04d0}",style="filled",fillcolor="orange"];
+1904224->1904256[dir="both";style="bold"];
+1904224->1901776[dir="both";style="bold"];
+1901776 [shape=record, label="{NodePointer:  | 1d04d0} | {ParentPointer: | 1d0e60} | {data: | 3} | {Left: | Right:} | {1d04f0 | 1d0530}",style="filled",fillcolor="tomato3"];
+1901776->1901808[dir="both";style="bold"];
+1901776->1901872[dir="both";style="bold"];
+1901872 [shape=record, label="{NodePointer:  | 1d0530} | {ParentPointer: | 1d04d0} | {data: | 5} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+1901808 [shape=record, label="{NodePointer:  | 1d04f0} | {ParentPointer: | 1d04d0} | {data: | 4} | {Left: | Right:} | {0 | 1d0510}",style="filled",fillcolor="springgreen3"];
+1901808->1901840[dir="both";style="bold"];
+1901840 [shape=record, label="{NodePointer:  | 1d0510} | {ParentPointer: | 1d04f0} | {data: | 8} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+1904256 [shape=record, label="{NodePointer:  | 1d0e80} | {ParentPointer: | 1d0e60} | {data: | 2} | {Left: | Right:} | {1d0eb0 | 1d04b0}",style="filled",fillcolor="springgreen3"];
+1904256->1904304[dir="both";style="bold"];
+1904256->1901744[dir="both";style="bold"];
+1901744 [shape=record, label="{NodePointer:  | 1d04b0} | {ParentPointer: | 1d0e80} | {data: | 7} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+1904304 [shape=record, label="{NodePointer:  | 1d0eb0} | {ParentPointer: | 1d0e80} | {data: | 6} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+label = "Tree with name: TestTreee"}
+}
