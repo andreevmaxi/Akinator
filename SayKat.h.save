@@ -1,24 +1,235 @@
-#include <dos.h>
+#include <windows.h>
+#include <clocale>
+#include <locale>
+#include "ShellAPI.h";
+
 #include "dzon.h"
 
-void SayKot(char* text, int SizeOfChar)
+
+int IsItLoud(char OurChar)
     {
-    clock_t t0 = clock();
-    clock_t t1 = clock();
+    int NowKotik = 1;
+
+    switch(OurChar)
+        {
+        case 'à':
+            NowKotik = 2;
+            break;
+
+        case 'À':
+            NowKotik = 2;
+            break;
+
+        case 'å':
+            NowKotik = 2;
+            break;
+
+        case 'Å':
+            NowKotik = 2;
+            break;
+
+        case 'º':
+            NowKotik = 2;
+            break;
+
+        case 'ª':
+            NowKotik = 2;
+            break;
+
+        case 'è':
+            NowKotik = 2;
+            break;
+
+        case 'È':
+            NowKotik = 2;
+            break;
+
+        case '³':
+            NowKotik = 2;
+            break;
+
+        case '²':
+            NowKotik = 2;
+            break;
+
+        case '¿':
+            NowKotik = 2;
+            break;
+
+        case '¯':
+            NowKotik = 2;
+            break;
+
+        case 'é':
+            NowKotik = 2;
+            break;
+
+        case 'É':
+            NowKotik = 2;
+            break;
+
+        case 'î':
+            NowKotik = 2;
+            break;
+
+        case 'Î':
+            NowKotik = 2;
+            break;
+
+        case 'ó':
+            NowKotik = 2;
+            break;
+
+        case 'Ó':
+            NowKotik = 2;
+            break;
+
+        case 'þ':
+            NowKotik = 2;
+            break;
+
+        case 'Þ':
+            NowKotik = 2;
+            break;
+
+        case 'ÿ':
+            NowKotik = 2;
+            break;
+
+        case 'ß':
+            NowKotik = 2;
+            break;
+
+        case '¸':
+            NowKotik = 2;
+            break;
+
+        case '¨':
+            NowKotik = 2;
+            break;
+
+        case 'w':
+            NowKotik = 2;
+            break;
+
+        case 'e':
+            NowKotik = 2;
+            break;
+
+        case 'y':
+            NowKotik = 2;
+            break;
+
+        case 'u':
+            NowKotik = 2;
+            break;
+
+        case 'i':
+            NowKotik = 2;
+            break;
+
+        case 'o':
+            NowKotik = 2;
+            break;
+
+        case 'a':
+            NowKotik = 2;
+            break;
+
+        case 'j':
+            NowKotik = 2;
+            break;
+
+        case 'x':
+            NowKotik = 2;
+            break;
+
+        case 'ý':
+            NowKotik = 2;
+            break;
+
+        case 'Ý':
+            NowKotik = 2;
+            break;
+
+        case 'û':
+            NowKotik = 2;
+            break;
+
+        case 'Û':
+            NowKotik = 2;
+            break;
+
+        case 'Q':
+            NowKotik = 2;
+            break;
+
+        case 'E':
+            NowKotik = 2;
+            break;
+
+        case 'Y':
+            NowKotik = 2;
+            break;
+
+        case 'U':
+            NowKotik = 2;
+            break;
+
+        case 'I':
+            NowKotik = 2;
+            break;
+
+        case 'O':
+            NowKotik = 2;
+            break;
+
+        case 'A':
+            NowKotik = 2;
+            break;
+
+        case 'J':
+            NowKotik = 2;
+            break;
+
+        case 'X':
+            NowKotik = 2;
+            break;
+        }
+    return NowKotik;
+    }
+
+
+void SayKot(const char* text, int SizeOfChar)
+    {
+    kot Akinator;
 
     int NowChar = 0;
-    int NowKotik = 0;
+    int NowKotik = 1;
+    std::string TmpStr = "balcon\\balcon.exe -n \"TC Sergy_Ukrainian\" -s \"-7\" -t \"";
+    TmpStr += text;
+    TmpStr += "\"";
+    //system(TmpStr.c_str());
 
-    while ( NowChar < 0 )
+    //ShellExecute(NULL, NULL,"C:\\Users\\\"MI Pro-15\"\\Documents\\GitHub\\Akinator\\balcon\\balcon.exe",TmpStr.c_str(),NULL, NULL);
+    ShellExecute
+    while ( NowChar < SizeOfChar )
         {
-            system("cls");
-            sleep(0.1);
-            ++NowChar
+        system("cls");
+        ++NowChar;
+        NowKotik = IsItLoud(*(text + NowChar - 1));
+        Akinator.PrintKot(NowKotik);
+        printf("\n");
+        for(int i = 0; i < NowChar; ++i)
+            {
+            printf("%c", *(text + i));
+            }
 
-            for(int i = 0; i < NowChar; ++i)
-                {
-                printf("%c", *(text + i));
-                }
-            if()
+        if(*(text + NowChar) == '\0')
+            {
+            NowChar = SizeOfChar;
+            }
+        Sleep(300);
         }
+
     }

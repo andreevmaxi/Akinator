@@ -46,13 +46,13 @@ bool kot::PrintKot(int mode)
 
     switch(mode)
         {
-        case 1:
+        case 2:
             {
             NowPrint = KotOpened;
             }
             break;
 
-        case 2:
+        case 1:
             {
             NowPrint = KotClosed;
             }

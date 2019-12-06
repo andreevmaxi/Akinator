@@ -9,7 +9,7 @@ int main()
     char* text = (char*) calloc(100, sizeof(char));
 
     text = "Вітаю тебе, друже мій милий, не бажаєш зіграти?";
-    long SizeOfBase = 0;
+    long long SizeOfBase = 0;
     while(*(text + SizeOfBase) != '\0')
         {
         ++SizeOfBase;
@@ -17,17 +17,14 @@ int main()
 
 
     FILE* Base = fopen("base.txt", "wb");
-    fwrite(&SizeOfBase, sizeof(long), 1, Base);
+    fwrite(&SizeOfBase, sizeof(long long), 1, Base);
     fwrite(text, sizeof(char), SizeOfBase, Base);
 
     */
     FILE* Base = fopen("base.txt", "rb");
-    long SizeOfBase = 0;
-    int FirstPos = ftell(Base);
-    fread(&SizeOfBase, sizeof(long), 1, Base);
-    char* text = (char*) calloc(SizeOfBase, sizeof(char));
-    int NowPos = ftell(Base);
-    fread(text, sizeof(char), SizeOfBase, Base);
-    SayKot(text, SizeOfBase);
+    long long SizeOfBase = 0;
+    fread(SizeOfBase, sizeof(long long), 1, Base);
+    char* text = (char*) calloc(Siz, sizeof(char));
+
     return 0;
     }
