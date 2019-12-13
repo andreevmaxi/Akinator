@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>13-12-2019 at 13:22.23</u><br />
-Build ended on: <u>13-12-2019 at 13:22.27</u><p />
+Build started on: <u>13-12-2019 at 15:56.05</u><br />
+Build ended on: <u>13-12-2019 at 15:56.08</u><p />
 <b>-------------- Build: Debug in Akinator (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
 mingw32-g++.exe "C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp" -o bin\Debug\Akinator.exe -mconsole  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC -D_VORONEZH<br />
 In file included from C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:3:0:<br />
@@ -170,87 +170,88 @@ C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp: In function 'bool New
 <font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:121:15: warning: switch missing default case [-Wswitch-default]</font><br />
          switch(file)<br />
                ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp: In function 'bool AddingNewNode(MBinaryTree_t*, MNode_Binar_t*, char*)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:242:34: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+     *UserAns2 = tolower(*UserAns2);<br />
+                                  ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:250:38: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+         *UserAns2 = tolower(*UserAns2);<br />
+                                      ^<br />
 C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp: In function 'char* EnterUntilEnter(int*)':<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:255:30: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:279:30: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
          (TmpToBuff = getchar());<br />
                               ^<br />
 C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp: In function 'bool AkinatorMenu()':<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:287:51: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:311:51: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
              *(AkinatorBuffer + i) = fgetc(akinator);<br />
                                                    ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:296:36: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:320:36: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
          *UserAns = tolower(*UserAns);<br />
                                     ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:303:40: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:327:40: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
              *UserAns = tolower(*UserAns);<br />
                                         ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:309:17: warning: declaration of 'AnsSize' shadows a previous local [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:333:17: warning: declaration of 'AnsSize' shadows a previous local [-Wshadow]</font><br />
              int AnsSize = 0;<br />
                  ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:294:13: warning: shadowed declaration is here [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:318:13: warning: shadowed declaration is here [-Wshadow]</font><br />
          int AnsSize = 0;<br />
              ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:310:19: warning: declaration of 'UserAns' shadows a previous local [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:334:19: warning: declaration of 'UserAns' shadows a previous local [-Wshadow]</font><br />
              char* UserAns = EnterUntilEnter(&amp;AnsSize);<br />
                    ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:295:15: warning: shadowed declaration is here [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:319:15: warning: shadowed declaration is here [-Wshadow]</font><br />
          char* UserAns = EnterUntilEnter(&amp;AnsSize);<br />
                ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:311:40: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:335:40: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
              *UserAns = tolower(*UserAns);<br />
                                         ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:318:44: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:342:44: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
                  *UserAns = tolower(*UserAns);<br />
                                             ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:347:31: warning: declaration of 'UserAns2' shadows a previous local [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:371:31: warning: declaration of 'UserAns2' shadows a previous local [-Wshadow]</font><br />
                          char* UserAns2 = EnterUntilEnter(&amp;AnsSize2);<br />
                                ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:340:27: warning: shadowed declaration is here [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:364:27: warning: shadowed declaration is here [-Wshadow]</font><br />
                      char* UserAns2 = EnterUntilEnter(&amp;AnsSize2);<br />
                            ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:347:31: warning: unused variable 'UserAns2' [-Wunused-variable]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:371:31: warning: unused variable 'UserAns2' [-Wunused-variable]</font><br />
                          char* UserAns2 = EnterUntilEnter(&amp;AnsSize2);<br />
                                ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:322:19: warning: switch missing default case [-Wswitch-default]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:346:19: warning: switch missing default case [-Wswitch-default]</font><br />
              switch(Ans)<br />
                    ^<br />
 C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp: In function 'void GuessSth(MBinaryTree_t*)':<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:380:36: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:404:36: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
          *UserAns = tolower(*UserAns);<br />
                                     ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:387:40: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:411:40: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
              *UserAns = tolower(*UserAns);<br />
                                         ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:403:32: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:427:32: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
      *UserAns = tolower(*UserAns);<br />
                                 ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:410:36: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:434:36: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
          *UserAns = tolower(*UserAns);<br />
                                     ^<br />
 C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp: In function 'void CheckIfAlreadyDone(MBinaryTree_t*, MNode_Binar_t*)':<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:442:36: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
-         *UserAns = tolower(*UserAns);<br />
-                                    ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:449:40: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
-             *UserAns = tolower(*UserAns);<br />
-                                        ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:440:13: warning: unused variable 'AddSize' [-Wunused-variable]</font><br />
-         int AddSize = 0;<br />
-             ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:441:15: warning: unused variable 'AddAns' [-Wunused-variable]</font><br />
-         char* AddAns = EnterUntilEnter(&amp;AnsSize);<br />
-               ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:466:34: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+         *AddAns = tolower(*AddAns);<br />
+                                  ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:473:38: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+             *AddAns = tolower(*AddAns);<br />
+                                      ^<br />
 C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp: In function 'void CompareWord(MBinaryTree_t*)':<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:549:13: warning: declaration of 'Ans1Size' shadows a previous local [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:573:13: warning: declaration of 'Ans1Size' shadows a previous local [-Wshadow]</font><br />
          int Ans1Size = 0;<br />
              ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:544:9: warning: shadowed declaration is here [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:568:9: warning: shadowed declaration is here [-Wshadow]</font><br />
      int Ans1Size = 0;<br />
          ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:561:13: warning: declaration of 'Ans2Size' shadows a previous local [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:585:13: warning: declaration of 'Ans2Size' shadows a previous local [-Wshadow]</font><br />
          int Ans2Size = 0;<br />
              ^<br />
-<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:556:9: warning: shadowed declaration is here [-Wshadow]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:580:9: warning: shadowed declaration is here [-Wshadow]</font><br />
      int Ans2Size = 0;<br />
          ^<br />
 In file included from C:\Users\MI Pro-15\Documents\GitHub\Akinator\Akinator.cpp:3:0:<br />
@@ -258,9 +259,9 @@ C:\Users\MI Pro-15\Documents\GitHub\Akinator\SayKat.h: In function 'void SayKot(
 <font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Akinator\SayKat.h:217:81: warning: 'hwnd' may be used uninitialized in this function [-Wmaybe-uninitialized]</font><br />
      ShellExecute(hwnd,"open","balcon\\balcon.exe", TmpStr.c_str(),NULL, SW_HIDE);<br />
                                                                                  ^<br />
-Output size is 583,75 KB<br />
-<font color="#0000ff">Process terminated with status 0 (0 minutes, 3 seconds)</font><br />
-<font color="#0000ff">0 errors, 99 warnings (0 minutes, 3 seconds)</font><br />
+Output size is 584,25 KB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 2 seconds)</font><br />
+<font color="#0000ff">0 errors, 99 warnings (0 minutes, 2 seconds)</font><br />
 </tt>
 </body>
 </html>

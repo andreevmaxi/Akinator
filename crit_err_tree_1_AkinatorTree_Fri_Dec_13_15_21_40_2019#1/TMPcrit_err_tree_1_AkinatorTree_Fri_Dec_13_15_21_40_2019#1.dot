@@ -1,0 +1,29 @@
+digraph G{
+node [fontname="Lobster", fontsize=25];
+rankdir=HR;
+subgraph clusterlist {
+style=filled;
+color=lightgrey;
+17529240 [shape=record, label="{Number of tree nodes: | 11} | {NodePointer:  | 10b7998} | {ParentPointer: | 0} | {data: | є жива истота} | {Left: | Right:} | {10b79b8 | 10b7d30}",style="filled",fillcolor="orange"];
+17529240->17529272[dir="both";style="bold"];
+17529240->17530160[dir="both";style="bold"];
+17530160 [shape=record, label="{NodePointer:  | 10b7d30} | {ParentPointer: | 10b7998} | {data: | є містом мрії} | {Left: | Right:} | {10b7d70 | 10b7c50}",style="filled",fillcolor="tomato3"];
+17530160->17530224[dir="both";style="bold"];
+17530160->17529936[dir="both";style="bold"];
+17529936 [shape=record, label="{NodePointer:  | 10b7c50} | {ParentPointer: | 10b7d30} | {data: | є місцем народження роду Коробко} | {Left: | Right:} | {10b7d10 | 10b7bd0}",style="filled",fillcolor="tomato3"];
+17529936->17530128[dir="both";style="bold"];
+17529936->17529808[dir="both";style="bold"];
+17529808 [shape=record, label="{NodePointer:  | 10b7bd0} | {ParentPointer: | 10b7c50} | {data: | є в халф лайфі другому} | {Left: | Right:} | {10b7c10 | 10b7ad0}",style="filled",fillcolor="tomato3"];
+17529808->17529872[dir="both";style="bold"];
+17529808->17529552[dir="both";style="bold"];
+17529552 [shape=record, label="{NodePointer:  | 10b7ad0} | {ParentPointer: | 10b7bd0} | {data: | Воронеж} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+17529872 [shape=record, label="{NodePointer:  | 10b7c10} | {ParentPointer: | 10b7bd0} | {data: | Keln} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+17530128 [shape=record, label="{NodePointer:  | 10b7d10} | {ParentPointer: | 10b7c50} | {data: | Зміїв} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+17530224 [shape=record, label="{NodePointer:  | 10b7d70} | {ParentPointer: | 10b7d30} | {data: | долгопа} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+17529272 [shape=record, label="{NodePointer:  | 10b79b8} | {ParentPointer: | 10b7998} | {data: | є пілким мексиканцем} | {Left: | Right:} | {10b7a00 | 10b7e10}",style="filled",fillcolor="springgreen3"];
+17529272->17529344[dir="both";style="bold"];
+17529272->17530384[dir="both";style="bold"];
+17530384 [shape=record, label="{NodePointer:  | 10b7e10} | {ParentPointer: | 10b79b8} | {data: | короб&ко} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+17529344 [shape=record, label="{NodePointer:  | 10b7a00} | {ParentPointer: | 10b79b8} | {data: | Лукашов(Ліктор по матану)} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+label = "Tree with name: AkinatorTree"}
+}

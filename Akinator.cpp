@@ -2,7 +2,7 @@
 
 #include "SayKat.h"
 #include "MTree.h"
-
+#include "KatLecsicon.h"
 #ifdef _DEBUG
     #define DEB( code ) code
 
@@ -230,10 +230,34 @@ bool AddingNewNode(MBinaryTree_t* Akin, MNode_Binar_t* ToThatNode, char* NewAns)
     SecAns->data = (void*) NewAns;
     DEB(++Akin->TreeSize);
     DEB(++Akin->TreeSize);
+    ToThatNode = NewQuas;
+    UserAns = 0;
+    NewAns = 0;
     //дальше кіт спрашивает тип правильно ли, шо ответ на NewQuastion является НьюАнс, или поменять?
     //по ответу дальше строится меняется ли та и та местами или нет
-    // i pod konec govorit sps za infy
+    printf("Правильно ли, шо ответ на вопрос:\"%s?\" є ", (char*)ToThatNode->data);
+    printf("\"%s\"\n", (char*)(ToThatNode->Left)->data);
+    int AnsSize2 = 0;
+    char* UserAns2 = EnterUntilEnter(&AnsSize2);
+    *UserAns2 = tolower(*UserAns2);
 
+    while(*UserAns2 != 'д' && *UserAns2 != 'y' && *UserAns2 != 'n' && *UserAns2 != 'н')
+        {
+        printf("Ti ne ponial, na atot vopros nyzhno otvetit da ili net!\n");
+        AnsSize2 = 0;
+        free(UserAns2);
+        UserAns2 = EnterUntilEnter(&AnsSize2);
+        *UserAns2 = tolower(*UserAns2);
+        }
+
+    if(*UserAns2 != 'д' && *UserAns2 != 'y')
+        {
+        MNode_Binar_t* Tmp = ToThatNode->Right;
+        ToThatNode->Right = ToThatNode->Left;
+        ToThatNode->Left = Tmp;
+        }
+    // i pod konec govorit sps za infy
+    printf("Spasibo za infy\n");
     printf("nazhmite probel, chtobi prodolzhit");
     scanf("%*c");
     return 1;
@@ -263,7 +287,7 @@ char* EnterUntilEnter(int* AnsSize)
         }
     --ReservedChar;
     *(tmp + ReservedChar) = '\0';
-    tmp = (char*) realloc(tmp, ReservedChar * sizeof(char));
+    tmp = (char*) realloc(tmp, (ReservedChar + 1) * sizeof(char));
 
     *AnsSize = ReservedChar;
     return tmp;
@@ -338,7 +362,6 @@ bool AkinatorMenu()
                     printf("Vvedite slovo\n");
                     int AnsSize2 = 0;
                     char* UserAns2 = EnterUntilEnter(&AnsSize2);
-                    printf("ok");
                     while(!IsCharInTree(&AkinatorTree, UserAns2))
                         {
                         printf("Takogo slova ia ne znayu, hvatit vidumivat(pro otseystvie)\ndavay zanovo!(zanovo)");
@@ -438,15 +461,15 @@ void CheckIfAlreadyDone(MBinaryTree_t* AkinatorTree, MNode_Binar_t* NonCorrectNo
         {
         printf("Ты хош его добавить в базу?");
         int AddSize = 0;
-        char* AddAns = EnterUntilEnter(&AnsSize);
-        *UserAns = tolower(*UserAns);
-        while(*UserAns != 'д' && *UserAns != 'y' && *UserAns != 'n' && *UserAns != 'н')
+        char* AddAns = EnterUntilEnter(&AddSize);
+        *AddAns = tolower(*AddAns);
+        while(*AddAns != 'д' && *AddAns != 'y' && *AddAns != 'n' && *AddAns != 'н')
             {
-            AnsSize = 0;
-            free(UserAns);
+            AddSize = 0;
+            free(AddAns);
             printf("Ti ne ponial, na atot vopros nyzhno otvetit da ili net!\n");
-            UserAns = EnterUntilEnter(&AnsSize);
-            *UserAns = tolower(*UserAns);
+            AddAns = EnterUntilEnter(&AddSize);
+            *AddAns = tolower(*AddAns);
             }
         if(*UserAns != 'n' && *UserAns != 'н')
             {
@@ -594,6 +617,8 @@ void CompareWord(MBinaryTree_t* AkinatorTree)
             {
             flag = 0;
             printf("\n");
+            NodesFirst.push(NowNode);
+            NodesSecond.push(NowNode);
             }
         else
             {
@@ -609,7 +634,7 @@ void CompareWord(MBinaryTree_t* AkinatorTree)
         }
     if(!NodesFirst.empty())
         {
-        printf("Haracteristika pershogo slova:\n\n");
+        printf("Haracteristika %s:\n\n",UserAns1);
         }
     while(!NodesFirst.empty())
         {
@@ -633,7 +658,7 @@ void CompareWord(MBinaryTree_t* AkinatorTree)
         }
     if(!NodesSecond.empty())
         {
-        printf("Haracteristika vtorogo slova:\n\n");
+        printf("Haracteristika %s:\n\n",UserAns2);
         }
     while(!NodesSecond.empty())
         {
