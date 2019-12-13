@@ -1,39 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Akinator.cpp" open="1" top="1" tabpos="5">
-		<Cursor position="16" topLine="0" />
-		<BrowseMarks positions="586" />
-		<Book_Marks positions="" />
+	<File name="RecursiveEnter.h" open="0" top="0" tabpos="4">
+		<Cursor position="1134" topLine="44" />
 	</File>
-	<File name="MTree.h" open="1" top="0" tabpos="3">
-		<Cursor position="4294" topLine="17" />
-		<BrowseMarks positions="3250" />
-		<Book_Marks positions="" />
+	<File name="dzon.h" open="0" top="0" tabpos="1">
+		<Cursor position="1057" topLine="0" />
 	</File>
-	<File name="RecursiveEnter.h" open="1" top="0" tabpos="4">
-		<Cursor position="2265" topLine="1" />
-		<BrowseMarks positions="" />
-		<Book_Marks positions="" />
+	<File name="MTree.h" open="1" top="0" tabpos="2">
+		<Cursor position="10817" topLine="355" />
+		<BrowseMarks positions="504,533,615,641,3250" />
+	</File>
+	<File name="maks_node.h" open="0" top="0" tabpos="2">
+		<Cursor position="317" topLine="0" />
+		<BrowseMarks positions="317" />
+	</File>
+	<File name="Akinator.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="2862" topLine="61" />
+		<BrowseMarks positions="1989,6810,6854,7204,7248,7567" />
 	</File>
 	<File name="TestTree.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="147" topLine="0" />
-		<BrowseMarks positions="" />
-		<Book_Marks positions="" />
-	</File>
-	<File name="maks_node.h" open="1" top="0" tabpos="2">
-		<Cursor position="915" topLine="0" />
-		<BrowseMarks positions="" />
-		<Book_Marks positions="" />
-	</File>
-	<File name="dzon.h" open="1" top="0" tabpos="1">
-		<Cursor position="1057" topLine="39" />
-		<BrowseMarks positions="" />
-		<Book_Marks positions="" />
-	</File>
-	<File name="SayKat.h" open="1" top="0" tabpos="0">
-		<Cursor position="4630" topLine="178" />
-		<BrowseMarks positions="2448" />
-		<Book_Marks positions="" />
+		<Cursor position="224" topLine="0" />
 	</File>
 </BrowseTracker_layout_file>

@@ -6,194 +6,194 @@
 #include "dzon.h"
 
 
-int IsItLoud(char OurChar)
+double IsItLoud(char OurChar)
     {
-    int NowKotik = 1;
+    double NowKotik = 80;
 
     switch(OurChar)
         {
         case 'à':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'À':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'å':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'Å':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'º':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'ª':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'è':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'È':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case '³':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case '²':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case '¿':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case '¯':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'é':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'É':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'î':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'Î':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'ó':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'Ó':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'þ':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'Þ':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'ÿ':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'ß':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case '¸':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case '¨':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'w':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'e':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'y':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'u':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'i':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'o':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'a':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'j':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'x':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'ý':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'Ý':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'û':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'Û':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'Q':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'E':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'Y':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'U':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'I':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'O':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'A':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'J':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
 
         case 'X':
-            NowKotik = 2;
+            NowKotik = 120;
             break;
         }
     return NowKotik;
@@ -205,7 +205,10 @@ void SayKot(const char* text, int SizeOfChar)
     kot Akinator;
 
     int NowChar = 0;
-    int NowKotik = 1;
+    double NowDelay = 0.0;
+
+    Akinator.PrintKot(1);
+    Sleep(1100);
     std::string TmpStr = " -n \"TC Sergy_Ukrainian\" -s \"-10\" -t \"";
     TmpStr += text;
     TmpStr += "\"";
@@ -213,23 +216,46 @@ void SayKot(const char* text, int SizeOfChar)
     HWND hwnd;
     ShellExecute(hwnd,"open","balcon\\balcon.exe", TmpStr.c_str(),NULL, SW_HIDE);
     //ShellExecuteEx
+
+    system("cls");
+    Akinator.PrintKot(2);
+    printf("\n  ");
     while ( NowChar < SizeOfChar )
         {
-        system("cls");
-        ++NowChar;
-        NowKotik = IsItLoud(*(text + NowChar - 1));
-        Akinator.PrintKot(NowKotik);
-        printf("\n");
-        for(int i = 0; i < NowChar; ++i)
+        NowDelay = IsItLoud(*(text + NowChar));
+
+        if(*(text + NowChar) == '\n')
             {
-            printf("%c", *(text + i));
+            printf("%c  ", *(text + NowChar));
+            }
+        else
+            {
+            printf("%c", *(text + NowChar));
             }
 
         if(*(text + NowChar) == '\0')
             {
             NowChar = SizeOfChar;
             }
-        Sleep(0.001);
-        }
+        Sleep(NowDelay);
 
+        ++NowChar;
+        }
+    system("cls");
+    Akinator.PrintKot(1);
+    NowChar = 0;
+    printf("\n  ");
+    while ( NowChar < SizeOfChar )
+        {
+        if(*(text + NowChar) == '\n')
+            {
+            printf("%c  ", *(text + NowChar));
+            }
+        else
+            {
+            printf("%c", *(text + NowChar));
+            }
+        ++NowChar;
+        }
+    printf("\n");
     }

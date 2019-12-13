@@ -27,9 +27,9 @@ int main()
     TestTreee.ReadTree(buffer);
     TestTreee.TDUMP(9);
     free(buffer);
-    buffer = (char*)calloc(StrSize + 1, sizeof(char));
+    buffer = (char*)calloc(1, sizeof(char));
 
-    int BufferSize = StrSize + 1;
+    int BufferSize = 1;
     TestTreee.PrintTree(&buffer, &BufferSize);
     fclose(fp);
     fp = fopen("outputtree.txt", "w");

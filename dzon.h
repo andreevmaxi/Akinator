@@ -18,8 +18,8 @@ struct kot
 
 kot::kot()
     {
-    FILE* fo = fopen("dzon_opened_ascii.txt", "r");
-    FILE* fc = fopen("dzon_closed_ascii.txt", "r");
+    FILE* fo = fopen("systemfiles\\dzon_opened_ascii.txt", "r");
+    FILE* fc = fopen("systemfiles\\dzon_closed_ascii.txt", "r");
 
 
     fseek(fo, 0, SEEK_END);

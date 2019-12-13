@@ -1,0 +1,17 @@
+digraph G{
+node [fontname="Lobster", fontsize=25];
+rankdir=HR;
+subgraph clusterlist {
+style=filled;
+color=lightgrey;
+15829264 [shape=record, label="{Number of tree nodes: | 5} | {NodePointer:  | f18910} | {ParentPointer: | 0} | {data: | є жива истота} | {Left: | Right:} | {f18a58 | f18950}",style="filled",fillcolor="orange"];
+15829264->15829592[dir="both";style="bold"];
+15829264->15829328[dir="both";style="bold"];
+15829328 [shape=record, label="{NodePointer:  | f18950} | {ParentPointer: | f18910} | {data: | Воронеж} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+15829592 [shape=record, label="{NodePointer:  | f18a58} | {ParentPointer: | f18910} | {data: | є пілким мексиканцем} | {Left: | Right:} | {f18bd8 | f18930}",style="filled",fillcolor="springgreen3"];
+15829592->15829976[dir="both";style="bold"];
+15829592->15829296[dir="both";style="bold"];
+15829296 [shape=record, label="{NodePointer:  | f18930} | {ParentPointer: | f18a58} | {data: | короб&ко} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+15829976 [shape=record, label="{NodePointer:  | f18bd8} | {ParentPointer: | f18a58} | {data: | Лукашов(Ліктор по матану)} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+label = "Tree with name: AkinatorTree"}
+}

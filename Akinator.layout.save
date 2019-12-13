@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Akinator.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Akinator.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="16" topLine="0" />
+			<Cursor1 position="412" topLine="16" />
 		</Cursor>
+		<Folding>
+			<Collapse line="5" />
+			<Collapse line="70" />
+			<Collapse line="96" />
+			<Collapse line="98" />
+			<Collapse line="102" />
+			<Collapse line="104" />
+			<Collapse line="109" />
+			<Collapse line="114" />
+			<Collapse line="119" />
+			<Collapse line="124" />
+			<Collapse line="129" />
+			<Collapse line="134" />
+			<Collapse line="139" />
+			<Collapse line="155" />
+			<Collapse line="173" />
+			<Collapse line="186" />
+			<Collapse line="197" />
+			<Collapse line="201" />
+			<Collapse line="216" />
+			<Collapse line="226" />
+			<Collapse line="231" />
+		</Folding>
 	</File>
-	<File name="MTree.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="MTree.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4294" topLine="17" />
+			<Cursor1 position="11162" topLine="125" />
 		</Cursor>
 		<Folding>
 			<Collapse line="13" />
@@ -51,98 +74,59 @@
 			<Collapse line="251" />
 			<Collapse line="257" />
 			<Collapse line="262" />
-			<Collapse line="271" />
-			<Collapse line="273" />
-			<Collapse line="280" />
-			<Collapse line="283" />
-			<Collapse line="303" />
-			<Collapse line="310" />
-			<Collapse line="337" />
-			<Collapse line="339" />
-			<Collapse line="344" />
-			<Collapse line="351" />
-			<Collapse line="355" />
-			<Collapse line="357" />
-			<Collapse line="360" />
-			<Collapse line="364" />
+			<Collapse line="281" />
+			<Collapse line="309" />
+			<Collapse line="350" />
+			<Collapse line="361" />
+			<Collapse line="363" />
 			<Collapse line="366" />
-			<Collapse line="369" />
-			<Collapse line="374" />
-			<Collapse line="379" />
-			<Collapse line="405" />
-			<Collapse line="407" />
+			<Collapse line="372" />
 		</Folding>
 	</File>
-	<File name="RecursiveEnter.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="RecursiveEnter.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2265" topLine="1" />
+			<Cursor1 position="1134" topLine="44" />
 		</Cursor>
 		<Folding>
-			<Collapse line="5" />
-			<Collapse line="25" />
-			<Collapse line="29" />
-			<Collapse line="39" />
-			<Collapse line="41" />
-			<Collapse line="49" />
-			<Collapse line="54" />
-			<Collapse line="56" />
-			<Collapse line="60" />
-			<Collapse line="65" />
-			<Collapse line="74" />
-			<Collapse line="84" />
-			<Collapse line="92" />
-			<Collapse line="102" />
-			<Collapse line="104" />
-			<Collapse line="110" />
-			<Collapse line="116" />
-			<Collapse line="120" />
-			<Collapse line="124" />
 			<Collapse line="134" />
-			<Collapse line="138" />
 			<Collapse line="140" />
-			<Collapse line="143" />
+			<Collapse line="142" />
 			<Collapse line="147" />
-			<Collapse line="157" />
-			<Collapse line="166" />
-			<Collapse line="175" />
-			<Collapse line="177" />
-			<Collapse line="179" />
-			<Collapse line="182" />
-			<Collapse line="186" />
-			<Collapse line="188" />
-			<Collapse line="191" />
+			<Collapse line="151" />
+			<Collapse line="162" />
+			<Collapse line="171" />
+			<Collapse line="180" />
+			<Collapse line="193" />
+			<Collapse line="196" />
 		</Folding>
 	</File>
-	<File name="TestTree.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="dzon.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="147" topLine="0" />
+			<Cursor1 position="1057" topLine="0" />
 		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="19" />
+			<Collapse line="36" />
+			<Collapse line="43" />
+			<Collapse line="47" />
+			<Collapse line="49" />
+			<Collapse line="55" />
+		</Folding>
 	</File>
 	<File name="maks_node.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="915" topLine="0" />
+			<Cursor1 position="317" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="16" />
-			<Collapse line="21" />
-			<Collapse line="23" />
-			<Collapse line="28" />
-			<Collapse line="33" />
-			<Collapse line="38" />
-			<Collapse line="50" />
-			<Collapse line="56" />
-			<Collapse line="60" />
-		</Folding>
 	</File>
-	<File name="dzon.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="TestTree.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1057" topLine="39" />
+			<Cursor1 position="224" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="SayKat.h" open="1" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4630" topLine="178" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

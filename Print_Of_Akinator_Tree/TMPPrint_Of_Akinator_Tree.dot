@@ -1,0 +1,25 @@
+digraph G{
+node [fontname="Lobster", fontsize=25];
+rankdir=HR;
+subgraph clusterlist {
+style=filled;
+color=lightgrey;
+1997208 [shape=record, label="{Number of tree nodes: | 9} | {NodePointer:  | 1e7998} | {ParentPointer: | 0} | {data: | є жива истота} | {Left: | Right:} | {1e79b8 | 1e7a90}",style="filled",fillcolor="orange"];
+1997208->1997240[dir="both";style="bold"];
+1997208->1997456[dir="both";style="bold"];
+1997456 [shape=record, label="{NodePointer:  | 1e7a90} | {ParentPointer: | 1e7998} | {data: | є містом мрії} | {Left: | Right:} | {1e7b30 | 1e7ad0}",style="filled",fillcolor="tomato3"];
+1997456->1997616[dir="both";style="bold"];
+1997456->1997520[dir="both";style="bold"];
+1997520 [shape=record, label="{NodePointer:  | 1e7ad0} | {ParentPointer: | 1e7a90} | {data: | є місцем народження роду Коробко} | {Left: | Right:} | {1e7cd0 | 1e7c50}",style="filled",fillcolor="tomato3"];
+1997520->1998032[dir="both";style="bold"];
+1997520->1997904[dir="both";style="bold"];
+1997904 [shape=record, label="{NodePointer:  | 1e7c50} | {ParentPointer: | 1e7ad0} | {data: | Воронеж} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+1998032 [shape=record, label="{NodePointer:  | 1e7cd0} | {ParentPointer: | 1e7ad0} | {data: | Зміїв} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+1997616 [shape=record, label="{NodePointer:  | 1e7b30} | {ParentPointer: | 1e7a90} | {data: | долгопа} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+1997240 [shape=record, label="{NodePointer:  | 1e79b8} | {ParentPointer: | 1e7998} | {data: | є пілким мексиканцем} | {Left: | Right:} | {1e7a00 | 1e7cb0}",style="filled",fillcolor="springgreen3"];
+1997240->1997312[dir="both";style="bold"];
+1997240->1998000[dir="both";style="bold"];
+1998000 [shape=record, label="{NodePointer:  | 1e7cb0} | {ParentPointer: | 1e79b8} | {data: | короб&ко} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="salmon2"];
+1997312 [shape=record, label="{NodePointer:  | 1e7a00} | {ParentPointer: | 1e79b8} | {data: | Лукашов(Ліктор по матану)} | {Left: | Right:} | {0 | 0}",style="filled",fillcolor="seagreen2"];
+label = "Tree with name: AkinatorTree"}
+}

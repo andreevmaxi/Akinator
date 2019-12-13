@@ -21,7 +21,8 @@
     #define DEBMTree_t( tree )
 #endif
 
-const std::string DotPath = "\"C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe\"";
+const std::string DotPath = "\"C:\\\"Program Files (x86)\"\\Graphviz2.38\\bin\\dot.exe\"";
+const std::string AkinatorPath = "C:\\Users\\MI Pro-15\\Documents\\GitHub\\Akinator\\";
 
 struct MBinaryTree_t
     {
@@ -45,7 +46,7 @@ struct MBinaryTree_t
 
     DEB(void TDUMP(int err));
 
-    int PrintTree(char* buffer, int* BuffSize, MNode_Binar_t* NowNode = (MNode_Binar_t*)3, int BShift = 0);
+    int PrintTree(char** buffer, int* BuffSize, MNode_Binar_t* NowNode = (MNode_Binar_t*)3, int BShift = 0);
 
     void BuffCheck(char** buffer, int* BuffSize, int BShift);
 
@@ -105,10 +106,11 @@ int MBinaryTree_t::PrintTree(char** buffer, int* BuffSize, MNode_Binar_t* NowNod
         }
     bool IsPrintOk = 1;
 
-    printf("NowNode: %x\n", NowNode);
-
     BuffCheck(buffer, BuffSize, BShift);
     *(*buffer + BShift) = '{';
+    ++BShift;
+    BuffCheck(buffer, BuffSize, BShift);
+    *(*buffer + BShift) = ' ';
     ++BShift;
     BuffCheck(buffer, BuffSize, BShift);
     *(*buffer + BShift) = '\"';
@@ -128,6 +130,9 @@ int MBinaryTree_t::PrintTree(char** buffer, int* BuffSize, MNode_Binar_t* NowNod
     if(NowNode->Left == (MNode_Binar_t*)0 && NowNode->Right == (MNode_Binar_t*)0)
         {
         BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = ' ';
+        ++BShift;
+        BuffCheck(buffer, BuffSize, BShift);
         *(*buffer + BShift) = '}';
         ++BShift;
         return BShift;
@@ -145,6 +150,9 @@ int MBinaryTree_t::PrintTree(char** buffer, int* BuffSize, MNode_Binar_t* NowNod
             {
             BShift = MBinaryTree_t::PrintTree(buffer, BuffSize, NowNode->Left, BShift);
             }
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = ' ';
+        ++BShift;
         if(NowNode->Right == (MNode_Binar_t*)0)
             {
             BuffCheck(buffer, BuffSize, BShift);
@@ -154,16 +162,20 @@ int MBinaryTree_t::PrintTree(char** buffer, int* BuffSize, MNode_Binar_t* NowNod
             {
             BShift = MBinaryTree_t::PrintTree(buffer, BuffSize, NowNode->Right, BShift);
             }
+        BuffCheck(buffer, BuffSize, BShift);
+        *(*buffer + BShift) = ' ';
+        ++BShift;
         }
     BuffCheck(buffer, BuffSize, BShift);
     *(*buffer + BShift) = '}';
     ++BShift;
     if(NowNode == root)
         {
-        BuffCheck(&*buffer, BuffSize, BShift);
+        BuffCheck(buffer, BuffSize, BShift);
         *(*buffer + BShift) = '\0';
         ++BShift;
-        *buffer = (char*) realloc(*buffer, BShift * sizeof(char));
+        *BuffSize = BShift;
+        *buffer = (char*) realloc(*buffer, *BuffSize * sizeof(char));
         }
     return BShift;
     }
@@ -259,6 +271,7 @@ bool MBinaryTree_t::DeleteNode(MNode_Binar_t* DelNode, MNode_Binar_t** LeftSubTr
         }
 #endif
 
+
 #ifdef _DEBUG
     void MBinaryTree_t::TDUMP(int err)
         {
@@ -267,10 +280,18 @@ bool MBinaryTree_t::DeleteNode(MNode_Binar_t* DelNode, MNode_Binar_t** LeftSubTr
         std::string NewPath;
 
         time_t now = std::chrono::system_clock::to_time_t ( std::chrono::system_clock::now() );
+        if(err == 8)
+            {
+            DTime = "Print_Of_Akinator_Tree";
+            --NumOfDumps;
+            }
+        else
+            {
         if(err == 9)
             {
             DTime = "debug_tree";
-            } else
+            }
+        else
             {
             std::string CritStr = "crit_err_tree_";
             char ErrStr[17];
@@ -287,6 +308,7 @@ bool MBinaryTree_t::DeleteNode(MNode_Binar_t* DelNode, MNode_Binar_t** LeftSubTr
         ++NumOfDumps;
         itoa(NumOfDumps, HashStr, 10);
         DTime += HashStr;
+
         DTime += ".dot";
         DTime.erase(DTime.find('\n'), 1);
         int tmp = DTime.find(' ');
@@ -308,14 +330,14 @@ bool MBinaryTree_t::DeleteNode(MNode_Binar_t* DelNode, MNode_Binar_t** LeftSubTr
         std::string MKDIR = "mkdir " + DTime;
         std::system(MKDIR.c_str());
         NewPath = DTime;
-        NewPath += "\\";
+        NewPath += "\\TMP";
         DTime += ".dot";
         NewPath += DTime;
 
         LDot = fopen(NewPath.c_str(), "w");
         assert(LDot != NULL);
 
-        fprintf(LDot, "digraph G{\nnode [ fontname=\"Lobster\", fontsize=25];\n");
+        fprintf(LDot, "digraph G{\nnode [fontname=\"Lobster\", fontsize=25];\n");
 
         MNode_Binar_t* NowNode = root;
         fprintf(LDot, "rankdir=HR;\n");
@@ -377,6 +399,31 @@ bool MBinaryTree_t::DeleteNode(MNode_Binar_t* DelNode, MNode_Binar_t** LeftSubTr
         fprintf(LDot, "}\n");
         fclose(LDot);
 
+        std::string ConvertDot;
+        ConvertDot += " powershell -command \"get-content -path ";
+        ConvertDot += NewPath;
+        ConvertDot += " | out-file ";
+        NewPath.erase(NewPath.rfind("TMP"), 3);
+        ConvertDot += NewPath;
+        ConvertDot += " -encoding utf8\"";
+        HWND hwnd;
+        //ShellExecute(hwnd, "open", "cmd", ConvertDot.c_str(), NULL, SW_HIDE);
+        std::system(ConvertDot.c_str());
+
+        std::string* TmpStrS = new std::string;
+        *TmpStrS = AkinatorPath + NewPath;
+        FILE* TmpFile = fopen((*TmpStrS).c_str(), "rb");
+        int FSize = 0;
+        fseek(TmpFile, 0, SEEK_END);
+        FSize = ftell(TmpFile);
+        rewind(TmpFile);
+        char* buff = (char*) calloc(FSize, sizeof(char));
+        fread(buff, sizeof(char), FSize, TmpFile);
+        fclose(TmpFile);
+        TmpFile = fopen((*TmpStrS).c_str(), "wb");
+        fwrite((buff + 3), sizeof(char), (FSize - 3), TmpFile);
+        fclose(TmpFile);
+        delete(TmpStrS);
 
         std::string DotDoDot;
         DotDoDot += DotPath;
@@ -387,7 +434,6 @@ bool MBinaryTree_t::DeleteNode(MNode_Binar_t* DelNode, MNode_Binar_t** LeftSubTr
         DotDoDot += NewPath;
         DotDoDot += ".png";
         std::system(DotDoDot.c_str());
-
         return;
         }
 #endif

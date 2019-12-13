@@ -134,12 +134,16 @@ bool MBT_r::Quotes(MNode_Binar_t* NowNode, char** buffer)
 bool MBT_r::DataRead(MNode_Binar_t* NowNode, char** buffer)
     {
     int DataSize = 0;
-    int NowSize = 1;
+    int NowSize  = 1;
+    char* TmpData = (char*)0;
+
     switch(NowNode->type)
         {
         case 'C': // it's char*
             {
-            char* TmpData = (char*)NowNode->data;
+            NowSize  = 1;
+            DataSize = 0;
+            TmpData = (char*)NowNode->data;
             while(**buffer != *"\"")
                 {
                 *TmpData = **buffer;
@@ -148,9 +152,10 @@ bool MBT_r::DataRead(MNode_Binar_t* NowNode, char** buffer)
                     {
                     NowSize *= 2;
                     NowNode->data = realloc(NowNode->data, sizeof(char) * NowSize);
+                    TmpData = (char*)NowNode->data + DataSize - 1;
                     }
-                ++TmpData;
                 ++(*buffer);
+                ++TmpData;
                 }
             *TmpData = '\0';
             ++DataSize;
