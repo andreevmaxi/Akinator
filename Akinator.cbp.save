@@ -33,6 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Akinator.cpp" />
+		<Unit filename="KatLecsicon.h" />
 		<Unit filename="MTree.h" />
 		<Unit filename="RecursiveEnter.h" />
 		<Unit filename="SayKat.h" />

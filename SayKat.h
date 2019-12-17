@@ -200,15 +200,16 @@ double IsItLoud(char OurChar)
     }
 
 
-void SayKot(const char* text, int SizeOfChar)
+void SayKot(char* text, int SizeOfChar)
     {
     kot Akinator;
 
     int NowChar = 0;
     double NowDelay = 0.0;
 
+    system("cls");
     Akinator.PrintKot(1);
-    Sleep(1100);
+    Sleep(400);
     std::string TmpStr = " -n \"TC Sergy_Ukrainian\" -s \"-10\" -t \"";
     TmpStr += text;
     TmpStr += "\"";
@@ -249,13 +250,20 @@ void SayKot(const char* text, int SizeOfChar)
         {
         if(*(text + NowChar) == '\n')
             {
-            printf("%c  ", *(text + NowChar));
+            printf("%c ", *(text + NowChar));
             }
         else
             {
             printf("%c", *(text + NowChar));
             }
+
+        if(*(text + NowChar) == '\0')
+            {
+            NowChar = SizeOfChar;
+            }
         ++NowChar;
         }
-    printf("\n");
+
+    Sleep(100);
+    free(text);
     }

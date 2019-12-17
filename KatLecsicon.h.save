@@ -205,17 +205,6 @@ CatPhases::~CatPhases()
     }
 
 
-long ReverseLong(long a)
-    {
-    long b = 0;
-    printf("%d %d %d %d", (int)*((char*)(&a) + 3), (int)*((char*)(&a) + 2), (int)*((char*)(&a) + 1), (int)*((char*)(&a) + 0));
-    *((char*)(&b) + 0) = *((char*)(&a) + 3);
-    *((char*)(&b) + 1) = *((char*)(&a) + 2);
-    *((char*)(&b) + 2) = *((char*)(&a) + 1);
-    *((char*)(&b) + 3) = *((char*)(&a) + 0);
-
-    return b;
-    }
 
 char* CatPhases::GiveW(std::string Name, char* a, char* b, char* c)
     {
@@ -294,62 +283,61 @@ char* CatPhases::GiveW(std::string Name, char* a, char* b, char* c)
             buff = PervoeBuff;
             sizebuff = PervoeSize;
         }
-    int RandomPhraze = rand() % 7 - 1;
+    int RandomPhraze = rand() % 7;
 
     char* tmp = buff;
-    long  TmpSizeNise = 0;
+    int TmpSize = 0;
     for(int i = 0; i < RandomPhraze; ++i)
         {
-        TmpSizeNise = (*((long*)tmp));
-        if(TmpSizeNise + (tmp - buff) + 4 < (sizebuff - 5))
+        
+        printf("pizd %s %c %d %d %d\n", tmp, *(tmp), sizebuff, tmp - buff, *((long*)tmp));
+        if(*((long*)tmp) + (tmp - buff) < (sizebuff - 5))
             {
-            tmp += *((long*)tmp) + sizeof(long);
+            tmp += *((long*)tmp);
             }
         else
             {
             tmp = buff;
             }
         }
-    TmpSizeNise = (*((long*)tmp));
     tmp += sizeof(long);
     buff = tmp;
+    TmpSize = strlen(tmp);
     if(a != NULL)
         {
-        ++TmpSizeNise;
-        TmpSizeNise += strlen(a);
+        ++TmpSize;
+        TmpSize += strlen(a);
         }
     if(b != NULL)
         {
-        ++TmpSizeNise;
-        TmpSizeNise += strlen(b);
+        ++TmpSize;
+        TmpSize += strlen(b);
         }
     if(c != NULL)
         {
-        ++TmpSizeNise;
-        TmpSizeNise += strlen(c);
+        ++TmpSize;
+        TmpSize += strlen(c);
         }
-    ++TmpSizeNise;
-    buff = (char*) calloc(TmpSizeNise + 1, sizeof(char));
-    for(long i = 0; i < *(long*)(tmp - sizeof(long)); ++i)
-        {
-        *(buff + i) = *(tmp + i);
-        }
+    ++TmpSize;
+    tmp = (char*) calloc(TmpSize + 1, sizeof(char));
+    strcpy(tmp, buff);
+    strcpy((strlen(tmp) + tmp), buff);
     if(a != NULL)
         {
-        *(*(long*)(tmp - sizeof(long)) + strlen(a) + buff) = ' ';
-        strcpy((*(long*)(tmp - sizeof(long)) + strlen(a) + buff + 1), a);
+        *(strlen(tmp) + strlen(a) + tmp) = ' ';
+        strcpy((strlen(tmp) + strlen(a) + tmp + 1), a);
         if(b != NULL)
             {
-            *(*(long*)(tmp - sizeof(long)) + strlen(a) + strlen(b) + buff) = ' ';
-            strcpy((*(long*)(tmp - sizeof(long)) + strlen(a) + strlen(b) + 1 + buff), b);
+            *(strlen(tmp) + strlen(a) + strlen(b) + tmp) = ' ';
+            strcpy((strlen(tmp) + strlen(a) + strlen(b) + 1 + tmp), b);
             if(c != NULL)
                 {
-                *(*(long*)(tmp - sizeof(long)) + strlen(a) + strlen(b) + strlen(c) + buff) = ' ';
-                strcpy((*(long*)(tmp - sizeof(long)) + strlen(a) + strlen(b) + 1 + strlen(c) + buff), c);
+                *(strlen(tmp) + strlen(a) + strlen(b) + strlen(c) + tmp) = ' ';
+                strcpy((strlen(tmp) + strlen(a) + strlen(b) + 1 + strlen(c) + tmp), c);
                 }
             }
         }
-    *(buff + TmpSizeNise) = '\0';
-    *(buff + TmpSizeNise - 1) = '\n';
-    return buff;
+    *(tmp + TmpSize) = '\0';
+    *(tmp + TmpSize - 1) = '\n';
+    return tmp;
     }

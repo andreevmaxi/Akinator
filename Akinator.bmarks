@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="RecursiveEnter.h" open="0" top="0" tabpos="4">
-		<Cursor position="1134" topLine="44" />
+	<File name="Akinator.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="10315" topLine="190" />
+		<BrowseMarks positions="24983,13933,15190,15754,18559,19142,19238,19253,20631,20678,20795,21389,21836,22330,22376,22558,22569,22633,24500,24688" />
+		<Book_Marks positions="19143" />
+	</File>
+	<File name="MTree.h" open="1" top="0" tabpos="2">
+		<Cursor position="11425" topLine="382" />
+		<BrowseMarks positions="14053" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="maks_node.h" open="1" top="0" tabpos="4">
+		<Cursor position="1311" topLine="0" />
+		<BrowseMarks positions="1311" />
+		<Book_Marks positions="" />
 	</File>
 	<File name="dzon.h" open="0" top="0" tabpos="1">
 		<Cursor position="1057" topLine="0" />
 	</File>
-	<File name="MTree.h" open="1" top="0" tabpos="2">
-		<Cursor position="10817" topLine="355" />
-		<BrowseMarks positions="504,533,615,641,3250" />
+	<File name="RecursiveEnter.h" open="0" top="0" tabpos="4">
+		<Cursor position="1134" topLine="44" />
 	</File>
-	<File name="maks_node.h" open="0" top="0" tabpos="2">
-		<Cursor position="317" topLine="0" />
-		<BrowseMarks positions="317" />
+	<File name="SayKat.h" open="1" top="0" tabpos="3">
+		<Cursor position="4875" topLine="23" />
+		<BrowseMarks positions="3499,3620,3640,3846,3929,4158,4367,4417,4458,4491,4871,4956,3755,3776" />
+		<Book_Marks positions="" />
 	</File>
-	<File name="Akinator.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="2862" topLine="61" />
-		<BrowseMarks positions="1989,6810,6854,7204,7248,7567" />
+	<File name="KatLecsicon.h" open="1" top="0" tabpos="5">
+		<Cursor position="6794" topLine="260" />
+		<BrowseMarks positions="6045,6656,7082,7308,7569,8174" />
+		<Book_Marks positions="" />
 	</File>
 	<File name="TestTree.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="224" topLine="0" />

@@ -33,8 +33,10 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Akinator.cpp" />
+		<Unit filename="KatLecsicon.h" />
 		<Unit filename="MTree.h" />
 		<Unit filename="RecursiveEnter.h" />
+		<Unit filename="SayKat.h" />
 		<Unit filename="TestTree.cpp" />
 		<Unit filename="dzon.h" />
 		<Unit filename="maks_node.h" />

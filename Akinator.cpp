@@ -1,7 +1,5 @@
 #include <conio.h>
 
-#include "SayKat.h"
-#include "MTree.h"
 #include "KatLecsicon.h"
 #ifdef _DEBUG
     #define DEB( code ) code
@@ -31,6 +29,8 @@ void CompareWord(MBinaryTree_t* AkinatorTree);
 
 MNode_Binar_t* SearchInTree(MBinaryTree_t* AkinatorTree, char* UserAns);
 
+CatPhases dzonik;
+
 int main()
     {
     SetConsoleCP(1251);
@@ -39,7 +39,18 @@ int main()
     /*
     char* text = (char*) calloc(100, sizeof(char));
 
-    text = "Вітаю тебе, друже мій милий, не бажаєш зіграти?";
+    text = "З тобою було весело, так що приходь сюди ще раз, поотгадиваем що-небудь ...";
+    long SizeOfBase = 0;
+    while(*(text + SizeOfBase) != '\0')
+        {
+        ++SizeOfBase;
+        }
+    NewPhrase(13, text, SizeOfBase);
+    */
+    /*
+    char* text = (char*) calloc(100, sizeof(char));
+
+    text = "Приветик як ти? Може зіграємо в угадайку?";
     long SizeOfBase = 0;
     while(*(text + SizeOfBase) != '\0')
         {
@@ -47,11 +58,11 @@ int main()
         }
 
 
-    FILE* Base = fopen("base.txt", "wb");
+    FILE* Base = fopen("systemfiles\\hello.txt", "wb");
     fwrite(&SizeOfBase, sizeof(long), 1, Base);
     fwrite(text, sizeof(char), SizeOfBase, Base);
-
     */
+
     /*
     FILE* Base = fopen("systemfiles\\hello.txt", "rb");
     long SizeOfBase = 0;
@@ -160,40 +171,49 @@ int main()
                 openfile = "systemfiles\\goodbye.txt";
                 }
                 break;
+            case(8):
+                {
+                openfile = "systemfiles\\noans.txt";
+                }
+                break;
+            case(9):
+                {
+                openfile = "systemfiles\\badnew.txt";
+                }
+                break;
+            case(10):
+                {
+                openfile = "systemfiles\\UserAddAns.txt";
+                }
+                break;
+            case(11):
+                {
+                openfile = "systemfiles\\AddingGuide.txt";
+                }
+                break;
+            case(12):
+                {
+                openfile = "systemfiles\\Pervoe.txt";
+                }
+                break;
+            case(13):
+                {
+                openfile = "systemfiles\\Spacibo.txt";
+                }
+                break;
             }
 
         FILE* fp = fopen(openfile.c_str(), "rb");
         fseek(fp, 0, SEEK_END);
         int RealSizeOfBuffer = ftell(fp);
         rewind(fp);
-        int SizeOfBuffer = 0;
-        int NowPhraze    = 2;
-        char* buffer     = (char*) calloc(SizeOfBuffer, sizeof(char));
-        int* SizeArray   = (int*)  calloc(NowPhraze, sizeof(int));
+        char* buffer     = (char*) calloc(RealSizeOfBuffer, sizeof(char));
 
-        while(SizeOfBuffer < RealSizeOfBuffer)
-            {
-            RealSizeOfBuffer        -= sizeof(long);
-            long TmpLong             = 0;
-            fread(&TmpLong, sizeof(long), 1, fp);
-            SizeOfBuffer            += TmpLong;
-            buffer                   = (char*) realloc(buffer, SizeOfBuffer * sizeof(char));
-            SizeArray                = (int*)  realloc(SizeArray, NowPhraze * sizeof(int));
-            *(SizeArray + NowPhraze) = TmpLong;
-            fread((buffer + SizeOfBuffer), sizeof(char), SizeOfBuffer, fp);
-            ++NowPhraze;
-            }
-        *(SizeArray + NowPhraze) = 0;
+        fread(buffer, sizeof(char), RealSizeOfBuffer, fp);
 
         fclose(fp);
         fp = fopen(openfile.c_str(), "wb");
-
-        long NowPrinted = 1;
-        while(*(SizeArray + NowPrinted) != 0)
-            {
-            fwrite((SizeArray + NowPrinted), sizeof(long), 1, fp);
-            fwrite((buffer + *(SizeArray + NowPrinted - 1)), sizeof(char), *(SizeArray + NowPrinted), fp);
-            }
+        fwrite(buffer, sizeof(char), RealSizeOfBuffer, fp);
         fwrite(&SizeOfText, sizeof(long), 1, fp);
         fwrite(text, sizeof(char), SizeOfText, fp);
 
@@ -205,7 +225,7 @@ int main()
 bool AddingNewNode(MBinaryTree_t* Akin, MNode_Binar_t* ToThatNode, char* NewAns)
     {
     MNode_Binar_t* NewQuas = new MNode_Binar_t('C', ToThatNode->Parent);
-    printf("(Kak pravilno stroit vopros)\nand napishite entot vopros\n");
+    SayKot(dzonik.GiveW("IGuide"), dzonik.IGuideSize);
     //Обїяснение от кота как правильно строить вопрос(тип без усяких не и тд)
     int UserAnsSize = 0;
     char* UserAns = 0;
@@ -235,15 +255,37 @@ bool AddingNewNode(MBinaryTree_t* Akin, MNode_Binar_t* ToThatNode, char* NewAns)
     NewAns = 0;
     //дальше кіт спрашивает тип правильно ли, шо ответ на NewQuastion является НьюАнс, или поменять?
     //по ответу дальше строится меняется ли та и та местами или нет
-    printf("Правильно ли, шо ответ на вопрос:\"%s?\" є ", (char*)ToThatNode->data);
-    printf("\"%s\"\n", (char*)(ToThatNode->Left)->data);
+
+    char vop[450] = "Правильно ли, шо ответ на вопрос:\"";
+    int i = 0;
+    while(*((char*)ToThatNode->data + i) != '\0')
+        {
+        *(vop + i + 34) += *((char*)ToThatNode->data + i);
+        ++i;
+        }
+    *(vop + i + 34) = '\"';
+    *(vop + i + 35) = ' ';
+    *(vop + i + 36) = 'є';
+    *(vop + i + 37) = ' ';
+    *(vop + i + 38) = '\"';
+    int j = 0;
+    while(*((char*)(ToThatNode->Left)->data + j) != '\0')
+        {
+        *(vop + i + 39) += *((char*)(ToThatNode->Left)->data + j);
+        ++i;
+        ++j;
+        }
+    *(vop + i + 39) = '\"';
+    *(vop + i + 40) = '\0';
+
+    SayKot(vop, 450);
     int AnsSize2 = 0;
     char* UserAns2 = EnterUntilEnter(&AnsSize2);
     *UserAns2 = tolower(*UserAns2);
 
     while(*UserAns2 != 'д' && *UserAns2 != 'y' && *UserAns2 != 'n' && *UserAns2 != 'н')
         {
-        printf("Ti ne ponial, na atot vopros nyzhno otvetit da ili net!\n");
+        SayKot(dzonik.GiveW("NAns"), dzonik.NAnsSize);
         AnsSize2 = 0;
         free(UserAns2);
         UserAns2 = EnterUntilEnter(&AnsSize2);
@@ -257,8 +299,8 @@ bool AddingNewNode(MBinaryTree_t* Akin, MNode_Binar_t* ToThatNode, char* NewAns)
         ToThatNode->Left = Tmp;
         }
     // i pod konec govorit sps za infy
-    printf("Spasibo za infy\n");
-    printf("nazhmite probel, chtobi prodolzhit");
+
+    SayKot(dzonik.GiveW("GoodBye"), dzonik.GoodByeSize);
     scanf("%*c");
     return 1;
     }
@@ -299,6 +341,7 @@ bool AkinatorMenu()
 
     while(Ans != 1)
         {
+
         DEBMTree_t(AkinatorTree);
         FILE* akinator = fopen("systemfiles\\akinator.txt", "rb");
         fseek(akinator, 0, SEEK_END);
@@ -314,13 +357,14 @@ bool AkinatorMenu()
         AkinatorTree.ReadTree(AkinatorBuffer);
         fclose(akinator);
 
-        printf("Прівіт!\nСыграем?\n");
+        SayKot(dzonik.GiveW("Hello"), dzonik.HelloSize);
+        printf("\n\n  ");
         int AnsSize = 0;
         char* UserAns = EnterUntilEnter(&AnsSize);
         *UserAns = tolower(*UserAns);
         while(*UserAns != 'д' && *UserAns != 'y' && *UserAns != 'n' && *UserAns != 'н')
             {
-            printf("Ti ne ponial, na atot vopros nyzhno otvetit da ili net!\n");
+            SayKot(dzonik.GiveW("NAns"), dzonik.NAnsSize);
             AnsSize = 0;
             free(UserAns);
             UserAns = EnterUntilEnter(&AnsSize);
@@ -329,13 +373,14 @@ bool AkinatorMenu()
 
         if(*UserAns != 'д' && *UserAns != 'y')
             {
-            printf("А что тогда хочешь делать?\n 1 Выйти(не в окно) \n 2 вывести всё дерево \n 3 сравнить два слова \n 4 получить хар-ку слова\n");
+            SayKot(dzonik.GiveW("Menu"), dzonik.MenuSize);
             int AnsSize = 0;
             char* UserAns = EnterUntilEnter(&AnsSize);
             *UserAns = tolower(*UserAns);
             while(*UserAns < '1' || *UserAns > '4')
                 {
-                printf("Ti ne ponial, na atot vopros nyzhno otvetit da ili net!\n");
+                char a[40] = "Будь ласка напиши число від 1 до 4\n\n";
+                SayKot(&a[0], 70);
                 AnsSize = 0;
                 free(UserAns);
                 UserAns = EnterUntilEnter(&AnsSize);
@@ -350,7 +395,7 @@ bool AkinatorMenu()
 
                 case 2:
                     AkinatorTree.TDUMP(8);
-                    printf("nazhmite probel, chtobi prodolzhit");
+                    SayKot(dzonik.GiveW("GoodBye"), dzonik.GoodByeSize);
                     scanf("%*c");
                     break;
 
@@ -359,12 +404,12 @@ bool AkinatorMenu()
                     break;
 
                 case 4:
-                    printf("Vvedite slovo\n");
+                    SayKot(dzonik.GiveW("Pervoe"), dzonik.PervoeSize);
                     int AnsSize2 = 0;
                     char* UserAns2 = EnterUntilEnter(&AnsSize2);
                     while(!IsCharInTree(&AkinatorTree, UserAns2))
                         {
-                        printf("Takogo slova ia ne znayu, hvatit vidumivat(pro otseystvie)\ndavay zanovo!(zanovo)");
+                        SayKot(dzonik.GiveW("Badnew"), dzonik.BNewSize);
                         AnsSize2 = 0;
                         free(UserAns2);
                         char* UserAns2 = EnterUntilEnter(&AnsSize2);
@@ -392,18 +437,28 @@ bool AkinatorMenu()
 
 void GuessSth(MBinaryTree_t* AkinatorTree)
     {
-    printf("Загадай слово, а я его легчайше отгадаю");
+    char a[100] = "Правила такі: ти згадавши слівце,\n а я задаю питання, а потім відгадую.";
+    SayKot(&a[0], 100);
     //wait
     MNode_Binar_t* NowNode = AkinatorTree->root;
     while(NowNode->Left != 0)
         {
-        printf("Vopros: %s?", (char*)NowNode->data);
+        char vop[450] = "Такс, ";
+        int i = 0;
+        while(*((char*)NowNode->data + i) != '\0')
+            {
+            *(vop + i + 6) += *((char*)NowNode->data + i);
+            ++i;
+            }
+        *(vop + i + 6) = '?';
+        *(vop + i + 7) = '\0';
+        SayKot(vop, 450);
         int AnsSize = 0;
         char* UserAns = EnterUntilEnter(&AnsSize);
         *UserAns = tolower(*UserAns);
         while(*UserAns != 'д' && *UserAns != 'y' && *UserAns != 'n' && *UserAns != 'н')
             {
-            printf("Ti ne ponial, na atot vopros nyzhno otvetit da ili net!\n");
+            SayKot(dzonik.GiveW("NAns"), dzonik.NAnsSize);
             AnsSize = 0;
             free(UserAns);
             UserAns = EnterUntilEnter(&AnsSize);
@@ -417,16 +472,28 @@ void GuessSth(MBinaryTree_t* AkinatorTree)
             {
             NowNode = (MNode_Binar_t*)NowNode->Left;
             }
-        printf("Okey, chto tam dalshe...(v pary variaciah)");
         }
 
-    printf("Vash otvet: %s\nNe tak li?", (char*)NowNode->data);
+    char ok[30] = "Окей, що там далі ...";
+    SayKot(ok, 30);
+
+    char ot[450] = "Отже, відповіддю є: ";
+    int j = 0;
+    while(*((char*)NowNode->data + j) != '\0')
+        {
+        *(ot + j + 20) += *((char*)NowNode->data + j);
+        ++j;
+        }
+    *(ot + j + 20) = '?';
+    *(ot + j + 21) = '\0';
+    SayKot(ot, 450);
+
     int AnsSize = 0;
     char* UserAns = EnterUntilEnter(&AnsSize);
     *UserAns = tolower(*UserAns);
     while(*UserAns != 'д' && *UserAns != 'y' && *UserAns != 'n' && *UserAns != 'н')
         {
-        printf("Ti ne ponial, na atot vopros nyzhno otvetit da ili net!\n");
+        SayKot(dzonik.GiveW("NAns"), dzonik.NAnsSize);
         AnsSize = 0;
         free(UserAns);
         UserAns = EnterUntilEnter(&AnsSize);
@@ -434,13 +501,13 @@ void GuessSth(MBinaryTree_t* AkinatorTree)
         }
     if(*UserAns != 'д' && *UserAns != 'y')
         {
-        printf("Okey, a chto zhe ato togda?");
+        SayKot(dzonik.GiveW("Lose"), dzonik.LoseSize);
         CheckIfAlreadyDone(AkinatorTree, NowNode); // tam prov est li, esli net, to AddingNewNode, esli est, to govotit
-        //sho ti debil blyat i posle CharacterWord(&AkinatorTree);
+        //sho ti дурек i posle CharacterWord(&AkinatorTree);
         }
     else
         {
-        printf("Legchayshe otgadano, luchsheb po-slozhnee pridumal b(v varuaciah)");
+        SayKot(dzonik.GiveW("Win"), dzonik.WinSize);
         }
     return;
     }
@@ -451,15 +518,15 @@ void CheckIfAlreadyDone(MBinaryTree_t* AkinatorTree, MNode_Binar_t* NonCorrectNo
     char* UserAns = EnterUntilEnter(&AnsSize);
     bool AlreadyInTree = IsCharInTree(AkinatorTree, UserAns);
 
-
     if(AlreadyInTree)
         {
-        printf("Дядь тут такое слово уже есть кек б вот какая его характеристика:\n");
+        char a[40] = "Дядьку, без образ, але таке слово вже є";
+        SayKot(&a[0], 40);
         CharacterWord(AkinatorTree, UserAns);
         }
     else
         {
-        printf("Ты хош его добавить в базу?");
+        SayKot(dzonik.GiveW("Add"), dzonik.AddSize);
         int AddSize = 0;
         char* AddAns = EnterUntilEnter(&AddSize);
         *AddAns = tolower(*AddAns);
@@ -467,7 +534,7 @@ void CheckIfAlreadyDone(MBinaryTree_t* AkinatorTree, MNode_Binar_t* NonCorrectNo
             {
             AddSize = 0;
             free(AddAns);
-            printf("Ti ne ponial, na atot vopros nyzhno otvetit da ili net!\n");
+            SayKot(dzonik.GiveW("NAns"), dzonik.NAnsSize);
             AddAns = EnterUntilEnter(&AddSize);
             *AddAns = tolower(*AddAns);
             }
@@ -522,7 +589,6 @@ bool IsCharInTree(const MBinaryTree_t* AkinatorTree, char* UserAns)
 
 void CharacterWord(MBinaryTree_t* AkinatorTree, char* UserAns)
     {
-    printf("Ny Chtozh solnyshko, vot tebe i har-ka tvoego slova:\n");
 
     MNode_Binar_t* SearchedNode = 0;
 
@@ -538,7 +604,11 @@ void CharacterWord(MBinaryTree_t* AkinatorTree, char* UserAns)
         NodesToGo.push((MNode_Binar_t*)NowNode->Parent);
         NowNode = (MNode_Binar_t*)NowNode->Parent;
         }
-    printf("Dannoe slovo imeet takyu har-ky:\n");
+
+    char ot[450] = "Дане слово має хакактерістіку:\n";
+
+    int j = 31;
+
     while(!NodesToGo.empty())
         {
         NowNode = NodesToGo.top();
@@ -546,47 +616,93 @@ void CharacterWord(MBinaryTree_t* AkinatorTree, char* UserAns)
 
         if(!NodesToGo.empty())
             {
-            if((NodesToGo.top()) == NowNode->Right)
+            if((NodesToGo.top()) == NowNode->Left)
                 {
-                printf("це %s\n", (char*)((NodesToGo.top())->data));
+                *(ot + j) = 'ц';
+                ++j;
+                *(ot + j) = 'е';
+                ++j;
+                *(ot + j) = ' ';
+                ++j;
+                int i = 0;
+                while(*((char*)((NodesToGo.top())->Parent->data) + i) != '\0')
+                    {
+                    *(ot + j) += *((char*)((NodesToGo.top())->Parent->data) + i);
+                    ++j;
+                    ++i;
+                    }
+                *(ot + j) = '\n';
+                ++j;
                 }
             else
                 {
-                printf("це НЕ %s\n", (char*)((NodesToGo.top())->data));
+                *(ot + j) = 'ц';
+                ++j;
+                *(ot + j) = 'е';
+                ++j;
+                *(ot + j) = ' ';
+                ++j;
+                *(ot + j) = 'Н';
+                ++j;
+                *(ot + j) = 'Е';
+                ++j;
+                *(ot + j) = ' ';
+                ++j;
+                int i = 0;
+                while(*((char*)((NodesToGo.top())->Parent->data) + i) != '\0')
+                    {
+                    *(ot + j) += *((char*)((NodesToGo.top())->Parent->data) + i);
+                    ++j;
+                    ++i;
+                    }
+                *(ot + j) = '\n';
+                ++j;
                 }
             }
         }
-    printf("nazhmite probel, chtobi prodolzhit");
+
+
+    *(ot + j) = '\0';
+    SayKot(ot, 450);
+
+    Sleep(5000);
+    SayKot(dzonik.GiveW("GoodBye"), dzonik.GoodByeSize);
     scanf("%*c");
     return;
     }
 
 void CompareWord(MBinaryTree_t* AkinatorTree)
     {
-    printf("Vvedite pershoe slovo\n");
+    SayKot(dzonik.GiveW("Comp"), dzonik.CompSize);
     int Ans1Size = 0;
     char* UserAns1 = EnterUntilEnter(&Ans1Size);
     while(!IsCharInTree(AkinatorTree, UserAns1))
         {
-        printf("Takogo slova ia ne znayu, hvatit vidumivat(pro otseystvie)\ndavay zanovo!(zanovo)");
+        SayKot(dzonik.GiveW("Badnew"), dzonik.BNewSize);
         int Ans1Size = 0;
         free(UserAns1);
         UserAns1 = EnterUntilEnter(&Ans1Size);
         }
 
     MNode_Binar_t* First = SearchInTree(AkinatorTree, UserAns1);
-    printf("Vvedite второе slovo\n");
+    char vtor[50] = "Добре, а друге словце яке?";
+    SayKot(vtor, 50);
     int Ans2Size = 0;
-    char* UserAns2 = EnterUntilEnter(&Ans2Size);
+    char UserAns2[30];
+    scanf("%s", UserAns2);
+    //char* UserAns2 = EnterUntilEnter(&Ans2Size);
+
     while(!IsCharInTree(AkinatorTree, UserAns2))
         {
-        printf("Takogo slova ia ne znayu, hvatit vidumivat(pro otseystvie)\ndavay zanovo!(zanovo)");
+        SayKot(dzonik.GiveW("Badnew"), dzonik.BNewSize);
         int Ans2Size = 0;
-        free(UserAns2);
-        UserAns2 = EnterUntilEnter(&Ans2Size);
+        scanf("%s", UserAns2);
+        //free(UserAns2);
+        //UserAns2 = EnterUntilEnter(&Ans2Size);
         }
 
     MNode_Binar_t* Second = SearchInTree(AkinatorTree, UserAns2);
+
 
 
     std::stack<MNode_Binar_t*> NodesFirst;
@@ -599,15 +715,20 @@ void CompareWord(MBinaryTree_t* AkinatorTree)
 
     std::stack<MNode_Binar_t*> NodesSecond;
     NodesSecond.push(Second);
+
     while(Second != AkinatorTree->root)
         {
         NodesSecond.push((MNode_Binar_t*)Second->Parent);
         Second = (MNode_Binar_t*)Second->Parent;
         }
-    bool flag = 1;
 
+    bool flag = 1;
+    bool IfHaveQual = 0;
     MNode_Binar_t* NowNode;
-    printf("Obshie svoyctva:\n\n");
+    char ot[650] = "загальні властивості:\n\n";
+
+    int j = 23;
+
     while(flag && !NodesFirst.empty() && !NodesSecond.empty())
         {
         NowNode = NodesFirst.top();
@@ -616,26 +737,90 @@ void CompareWord(MBinaryTree_t* AkinatorTree)
         if(NodesFirst.top() != NodesSecond.top() || NodesFirst.empty() || NodesSecond.empty())
             {
             flag = 0;
-            printf("\n");
             NodesFirst.push(NowNode);
             NodesSecond.push(NowNode);
             }
         else
             {
+            IfHaveQual = 1;
             if(NodesFirst.top() == NowNode->Left)
                 {
-                printf("вони %s\n", (char*)NowNode->data);
+                int i = 0;
+                *(ot + j) = 'в';
+                ++j;
+                *(ot + j) = 'о';
+                ++j;
+                *(ot + j) = 'н';
+                ++j;
+                *(ot + j) = 'и';
+                ++j;
+                *(ot + j) = ' ';
+                ++j;
+                while(*((char*)NowNode->Parent->data + i) != '\0')
+                    {
+                    *(ot + j) += *((char*)NowNode->Parent->data + i);
+                    ++j;
+                    ++i;
+                    }
+                *(ot + j) = '\n';
+                ++j;
                 }
             else
                 {
-                printf("вони НЕ %s\n", (char*)NowNode->data);
+                int i = 0;
+                *(ot + j) = 'в';
+                ++j;
+                *(ot + j) = 'о';
+                ++j;
+                *(ot + j) = 'н';
+                ++j;
+                *(ot + j) = 'и';
+                ++j;
+                *(ot + j) = ' ';
+                ++j;
+                *(ot + j) = 'Н';
+                ++j;
+                *(ot + j) = 'Е';
+                ++j;
+                *(ot + j) = ' ';
+                ++j;
+                while(*((char*)NowNode->Parent->data + i) != '\0')
+                    {
+                    *(ot + j) += *((char*)NowNode->Parent->data + i);
+                    ++j;
+                    ++i;
+                    }
+                *(ot + j) = '\n';
+                ++j;
                 }
             }
         }
+    *(ot + j) = '\0';
+    if(IfHaveQual)
+        {
+        SayKot(ot, 650);
+        Sleep(6000);
+        }
+
+    char per[450] = "характеристика ";
+
+    int p = 15;
+
     if(!NodesFirst.empty())
         {
-        printf("Haracteristika %s:\n\n",UserAns1);
+        int i = 0;
+        while(*(UserAns1 + i) != '\0')
+            {
+            *(per + p) = *(UserAns1 + i);
+            ++p;
+            ++i;
+            }
+        *(per + p) = '\n';
+        ++p;
+        *(per + p) = '\n';
+        ++p;
         }
+
     while(!NodesFirst.empty())
         {
         NowNode = NodesFirst.top();
@@ -644,21 +829,69 @@ void CompareWord(MBinaryTree_t* AkinatorTree)
             {
             if(NodesFirst.top() == NowNode->Left)
                 {
-                printf("це %s\n", (char*)NowNode->data);
+                int i = 0;
+                *(per + p) = 'ц';
+                ++p;
+                *(per + p) = 'е';
+                ++p;
+                *(per + p) = ' ';
+                ++p;
+                while(*((char*)NowNode->Parent->data + i) != '\0')
+                    {
+                    *(per + p) += *((char*)NowNode->Parent->data + i);
+                    ++p;
+                    ++i;
+                    }
+                *(per + p) = '\n';
+                ++p;
                 }
             else
                 {
-                printf("це НЕ %s\n", (char*)NowNode->data);
+                int i = 0;
+                *(per + p) = 'ц';
+                ++p;
+                *(per + p) = 'е';
+                ++p;
+                *(per + p) = ' ';
+                ++p;
+                *(per + p) = 'Н';
+                ++p;
+                *(per + p) = 'Е';
+                ++p;
+                *(per + p) = ' ';
+                ++p;
+                while(*((char*)NowNode->Parent->data + i) != '\0')
+                    {
+                    *(per + p) += *((char*)NowNode->Parent->data + i);
+                    ++p;
+                    ++i;
+                    }
+                *(per + p) = '\n';
+                ++p;
                 }
             }
-        else
-            {
-            printf("\n");
-            }
         }
+    *(per + p) = '\0';
+    ++p;
+    SayKot(per, 450);
+    Sleep(6000);
+    char vtors[450] = "характеристика ";
+
+    p = 15;
+
     if(!NodesSecond.empty())
         {
-        printf("Haracteristika %s:\n\n",UserAns2);
+        int i = 0;
+        while(*(UserAns2 + i) != '\0')
+            {
+            *(vtors + p) = *(UserAns2 + i);
+            ++p;
+            ++i;
+            }
+        *(vtors + p) = '\n';
+        ++p;
+        *(vtors + p) = '\n';
+        ++p;
         }
     while(!NodesSecond.empty())
         {
@@ -668,18 +901,62 @@ void CompareWord(MBinaryTree_t* AkinatorTree)
             {
             if(NodesSecond.top() == NowNode->Left)
                 {
-                printf("це %s\n", (char*)NowNode->data);
+                int i = 0;
+                *(vtors + p) = 'в';
+                ++p;
+                *(vtors + p) = 'о';
+                ++p;
+                *(vtors + p) = 'н';
+                ++p;
+                *(vtors + p) = 'и';
+                ++p;
+                *(vtors + p) = ' ';
+                ++p;
+                while(*((char*)NowNode->Parent->data + i) != '\0')
+                    {
+                    *(vtors + p) += *((char*)NowNode->Parent->data + i);
+                    ++p;
+                    ++i;
+                    }
+                *(vtors + p) = '\n';
+                ++p;
                 }
             else
                 {
-                printf("це НЕ %s\n", (char*)NowNode->data);
+                int i = 0;
+                *(vtors + p) = 'в';
+                ++p;
+                *(vtors + p) = 'о';
+                ++p;
+                *(vtors + p) = 'н';
+                ++p;
+                *(vtors + p) = 'и';
+                ++p;
+                *(vtors + p) = ' ';
+                ++p;
+                *(vtors + p) = 'Н';
+                ++p;
+                *(vtors + p) = 'Е';
+                ++p;
+                *(vtors + p) = ' ';
+                ++p;
+                while(*((char*)NowNode->Parent->data + i) != '\0')
+                    {
+                    *(vtors + p) += *((char*)NowNode->Parent->data + i);
+                    ++p;
+                    ++i;
+                    }
+                *(vtors + p) = '\n';
+                ++p;
                 }
             }
-        else
-            {
-            printf("\nVots, nazhmite enter dlya prodolzhenia");
-            }
         }
+
+    *(vtor + p) = '\0';
+    ++p;
+    SayKot(vtor, 450);
+    Sleep(6000);
+    SayKot(dzonik.GiveW("GoodBye"), dzonik.GoodByeSize);
     scanf("%*c");
     return;
     }
